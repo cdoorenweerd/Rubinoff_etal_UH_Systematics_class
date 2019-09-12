@@ -16,7 +16,7 @@
 #SBATCH --output=out-%A.out ## %A - filled with jobid
 ## Useful for remote notification
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,TIME_LIMIT_80
-#SBATCH --mail-user=cdoorenw@hawaii.edu
+#SBATCH --mail-user=youremail@hawaii.edu
 
 ## All options and environment variables found on schedMD site: http://slurm.schedmd.com/sbatch.html
 source ~/.bash_profile
@@ -25,4 +25,4 @@ module load lang/Anaconda3/5.1.0
 source activate iqtenv
 
 ## http://www.iqtree.org/doc/Command-Reference
-iqtree -s Syndemis_ALL.phy -nt 2 -alrt 1000 -bb 1000 -m GTR+F+R4
+iqtree -s Syndemis_ALL.phy -q -nt 1 -alrt 1000 -bb 1000

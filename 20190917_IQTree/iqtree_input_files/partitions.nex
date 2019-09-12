@@ -1,13 +1,12 @@
 #nexus
 begin sets;
-   CHARSET Rps5=1-628;
-   CHARSET MDH=629-1290;
-   CHARSET 28s=1291-1995;
-   CHARSET CAD=1996-2774;
-   CHARSET EF1a=2775-3519;
-   CHARSET N1=3520-4104;
-   CHARSET CO3=4105-4757;
-   CHARSET CO2=4758-5486;
-   CHARSET CO1=5487-6937;
-   partition Names = 9: Rps5, MDH, 28s, CAD, EF1a, N1, CO3, CO2, CO1;
-end;
+   charset Rps5 = 1-628;
+   charset MDH = 629-1290;
+   charset 28s = 1291-1995;
+   charset CAD = 1996-2774;
+   charset EF1a = 2775-3519;
+   charset N1 = 3520-4104;
+   charset CO3 = 4105-4757;
+   charset CO2 = 4758-5486;
+   charset CO1 = 5487-6937;
+End;
