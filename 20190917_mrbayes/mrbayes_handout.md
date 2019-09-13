@@ -21,12 +21,12 @@ ALWAYS START SLURM JOBS FROM WITHIN THE ```nfs_fs02``` FOLDER!!!
 Connect to the cluster using SSH. Navigate to the ```nfs_fs02``` subfolder that has the input files and start a batch submission
 
 ```console
-[cdoorenw@login002 ~]$ sbatch <slurm script>
+[cdoorenw@login002 ~]$ sbatch script.slurm
 ```
 
-You can see the status of queue on our partition with:
+You can see the status of the queue on our partition or for a username with:
 
 ```console
 [cdoorenw@login002 ~]$ squeue -p pep662
-[cdoorenw@login002 ~]$ squeue -u pep662_f2019
+[cdoorenw@login002 ~]$ squeue -u cdoorenw
 ```
