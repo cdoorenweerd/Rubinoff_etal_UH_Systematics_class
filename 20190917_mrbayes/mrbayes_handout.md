@@ -10,7 +10,7 @@ Files required:
 
 # Prepare input files
 
-Now that our environment is set-up, we can prepare the input files. Use sftp (Filezilla or Cyberduck) to retrieve the input files from the ```pep662_class/class_shared``` folder on the cluster. Copy the folder to your local computer (e.g. to your desktop). Use a text editor to examine the input files and adjust them to your needs.
+Use sftp (Filezilla or Cyberduck) to retrieve the input files that we have prepared for you from the ```pep662_class/class_shared``` folder on the cluster. Copy the folder to your local computer (e.g. to your desktop). Use a text editor to examine the input files and adjust them to your needs.
 
 When ready, use sftp to move the folder with input files to the ```nfs_fs02``` drive on the cluster.
 
