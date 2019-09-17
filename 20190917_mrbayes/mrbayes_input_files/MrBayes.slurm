@@ -6,7 +6,7 @@
 #SBATCH --time=3-00:00:00 ## time format is DD-HH:MM:SS
 ## task-per-node x cpus-per-task should not typically exceed core count on an individual node
 #SBATCH --nodes=1
-#SBATCH --tasks-per-node=19
+#SBATCH --tasks-per-node=2
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=120G ## max amount of memory per node you require
 
@@ -16,7 +16,7 @@
 #SBATCH --output=out-%A.out ## %A - filled with jobid
 ## Useful for remote notification
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,TIME_LIMIT_80
-#SBATCH --mail-user=mdsjose@hawaii.edu
+#SBATCH --mail-user=youremail@hawaii.edu
 
 ## All options and environment variables found on schedMD site: http://slurm.schedmd.com/sbatch.html
 source ~/.bash_profile
