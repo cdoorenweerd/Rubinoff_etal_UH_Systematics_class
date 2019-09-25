@@ -309,8 +309,8 @@ begin mrbayes;
 	unlink shape=(all) pinvar=(all) statefreq=(all) revmat=(all); [setting partition ]
 	mcmcp ngen=10000000 printfreq=1000 samplefreq=1000 nchains=4 nruns=2 savebrlens=yes;
    mcmc;
-   sump burnin=.25;
-   sumt burnin=.25;
+   sump burninfrac=.25;
+   sumt burninfrac=.25;
 
 end;
 
