@@ -25,4 +25,4 @@ module load lang/Anaconda3/5.1.0
 source activate iqtenv
 
 ## http://www.iqtree.org/doc/Command-Reference
-iqtree -s Syndemis_ALL.phy -nt 1 -alrt 5000 -bb 5000
+iqtree -s Syndemis_ALL.phy -nt 1 -alrt 5000 -bb 5000 -m TEST -lmap 2000

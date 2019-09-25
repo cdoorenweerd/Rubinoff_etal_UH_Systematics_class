@@ -1,0 +1,223 @@
+IQ-TREE multicore version 1.6.11 for Linux 64-bit built Jun 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    node-0040 (AVX, 125 GB RAM)
+Command: iqtree -s Syndemis_ALL.phy -nt 2 -alrt 1000 -bb 1000 -m GTR+F+R4
+Seed:    178266 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Thu Sep 12 19:59:45 2019
+Kernel:  AVX - 2 threads (20 CPU cores detected)
+
+Reading alignment file Syndemis_ALL.phy ... Phylip format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 49 sequences with 4989 columns, 362 distinct patterns
+229 parsimony-informative, 167 singleton sites, 4593 constant sites
+            Gap/Ambiguity  Composition  p-value
+   1  dr120albt    12.61%    failed      0.36%
+   2  dr121bcrk     0.18%    passed     99.41%
+   3  dr122mcld     0.06%    passed     99.92%
+   4  dr123mcld     0.12%    passed     99.78%
+   5  dr124mcld     0.06%    passed     99.84%
+   6  dr125bcrk     0.20%    passed     99.35%
+   7  dr126tenn     0.02%    passed     99.46%
+   8  dr127tenn     0.08%    passed     99.24%
+   9  dr128sier     0.78%    passed     99.06%
+  10  dr129sier     0.00%    passed     99.49%
+  11  dr130cam      0.38%    passed     99.30%
+  12  dr131cam      0.52%    passed     99.06%
+  13  dr134cam      0.56%    passed     99.64%
+  14  dr135cam      0.02%    passed     99.29%
+  15  dr136bcrk     0.10%    passed     99.63%
+  16  dr137bcrk     0.16%    passed     99.39%
+  17  dr138mcld     0.16%    passed     99.86%
+  18  dr139sier     1.14%    passed     98.97%
+  19  dr148hum      1.10%    passed     99.59%
+  20  dr150lobos    0.14%    passed     99.06%
+  21  dr165anvo     0.74%    passed     99.26%
+  22  dr166anvo     0.06%    passed     99.56%
+  23  dr178mpine    0.12%    passed     99.70%
+  24  dr179mpine    0.26%    passed     98.97%
+  25  as01bcrk     26.42%    passed     20.45%
+  26  as02bcrk      0.08%    passed     99.49%
+  27  as03sier      6.15%    passed     52.12%
+  28  as06koot      1.06%    passed     99.13%
+  29  cp25anvo      0.04%    passed     99.73%
+  30  cp26anvo      0.12%    passed     99.37%
+  31  cp27anvo      0.14%    passed     99.80%
+  32  as310dnmk     0.24%    passed     98.36%
+  33  ms552albt     0.24%    passed     99.86%
+  34  ms554sono     0.02%    passed     99.87%
+  35  ms555sono     0.02%    passed     99.81%
+  36  ms557sono     0.02%    passed     99.87%
+  37  ms561aus      0.16%    passed     97.03%
+  38  ms562aus      0.04%    passed     93.99%
+  39  ms564albt     1.30%    passed     99.75%
+  40  ms570hum      0.04%    passed     99.76%
+  41  ms591hum      0.02%    passed     99.89%
+  42  ms592hum      0.00%    passed     99.87%
+  43  ms600rom      0.58%    passed     97.52%
+  44  ms608rom      0.52%    passed     98.53%
+  45  ms643bcrk     0.04%    passed     99.81%
+  46  ms644bcrk     0.00%    passed     99.57%
+  47  ms645bcrk     0.00%    passed     99.57%
+  48  ms646bcrk     0.00%    passed     99.55%
+  49  jd4556del    13.65%    failed      0.48%
+****  TOTAL         1.44%  2 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: ms645bcrk is identical to ms644bcrk but kept for subsequent analysis
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.009 seconds
+Generating 1000 samples for ultrafast bootstrap (seed: 178266)...
+
+NOTE: 3 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -10730.661
+2. Current log-likelihood: -10430.642
+3. Current log-likelihood: -10397.566
+4. Current log-likelihood: -10370.093
+5. Current log-likelihood: -10352.304
+6. Current log-likelihood: -10337.786
+7. Current log-likelihood: -10327.439
+8. Current log-likelihood: -10321.954
+9. Current log-likelihood: -10320.722
+10. Current log-likelihood: -10320.206
+11. Current log-likelihood: -10319.829
+12. Current log-likelihood: -10319.597
+13. Current log-likelihood: -10319.408
+14. Current log-likelihood: -10319.251
+15. Current log-likelihood: -10319.120
+16. Current log-likelihood: -10319.006
+17. Current log-likelihood: -10318.903
+Optimal log-likelihood: -10318.800
+Rate parameters:  A-C: 0.88520  A-G: 6.88442  A-T: 1.43820  C-G: 1.16856  C-T: 9.81545  G-T: 1.00000
+Base frequencies:  A: 0.302  C: 0.195  G: 0.190  T: 0.313
+Site proportion and rates:  (0.433,0.119) (0.297,0.413) (0.219,0.670) (0.051,13.269)
+Parameters optimization took 17 rounds (0.799 sec)
+Computing ML distances based on estimated model parameters... 0.028 sec
+Computing BIONJ tree...
+0.005 seconds
+Log-likelihood of BIONJ tree: -10347.371
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.544 second
+Computing log-likelihood of 98 initial trees ... 0.881 seconds
+Current best score: -10314.988
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -10314.849
+BETTER TREE FOUND at iteration 2: -10314.842
+UPDATE BEST LOG-LIKELIHOOD: -10314.842
+UPDATE BEST LOG-LIKELIHOOD: -10314.842
+Iteration 10 / LogL: -10314.842 / Time: 0h:0m:5s
+Iteration 20 / LogL: -10314.997 / Time: 0h:0m:5s
+Finish initializing candidate tree set (3)
+Current best tree score: -10314.842 / CPU time: 4.957
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+UPDATE BEST LOG-LIKELIHOOD: -10314.837
+UPDATE BEST LOG-LIKELIHOOD: -10314.837
+Iteration 30 / LogL: -10354.713 / Time: 0h:0m:7s (0h:0m:19s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 31: -10302.004
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 32: -10301.901
+BETTER TREE FOUND at iteration 38: -10301.894
+Iteration 40 / LogL: -10301.942 / Time: 0h:0m:11s (0h:0m:29s left)
+Iteration 50 / LogL: -10301.909 / Time: 0h:0m:13s (0h:0m:24s left)
+Log-likelihood cutoff on original alignment: -10340.806
+Iteration 60 / LogL: -10301.910 / Time: 0h:0m:15s (0h:0m:20s left)
+UPDATE BEST LOG-LIKELIHOOD: -10301.892
+Iteration 70 / LogL: -10301.894 / Time: 0h:0m:16s (0h:0m:16s left)
+Iteration 80 / LogL: -10301.894 / Time: 0h:0m:18s (0h:0m:13s left)
+Iteration 90 / LogL: -10301.942 / Time: 0h:0m:20s (0h:0m:10s left)
+UPDATE BEST LOG-LIKELIHOOD: -10301.892
+Iteration 100 / LogL: -10301.897 / Time: 0h:0m:24s (0h:0m:9s left)
+Log-likelihood cutoff on original alignment: -10341.330
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.992
+Iteration 110 / LogL: -10306.015 / Time: 0h:0m:26s (0h:0m:21s left)
+Iteration 120 / LogL: -10301.896 / Time: 0h:0m:27s (0h:0m:18s left)
+Iteration 130 / LogL: -10301.905 / Time: 0h:0m:28s (0h:0m:15s left)
+TREE SEARCH COMPLETED AFTER 139 ITERATIONS / Time: 0h:0m:31s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -10301.892
+2. Current log-likelihood: -10301.807
+3. Current log-likelihood: -10301.726
+4. Current log-likelihood: -10301.649
+5. Current log-likelihood: -10301.576
+6. Current log-likelihood: -10301.506
+7. Current log-likelihood: -10301.441
+8. Current log-likelihood: -10301.379
+9. Current log-likelihood: -10301.321
+10. Current log-likelihood: -10301.265
+11. Current log-likelihood: -10301.214
+12. Current log-likelihood: -10301.164
+13. Current log-likelihood: -10301.118
+14. Current log-likelihood: -10301.075
+15. Current log-likelihood: -10301.034
+16. Current log-likelihood: -10300.995
+17. Current log-likelihood: -10300.958
+18. Current log-likelihood: -10300.924
+19. Current log-likelihood: -10300.892
+20. Current log-likelihood: -10300.861
+21. Current log-likelihood: -10300.833
+22. Current log-likelihood: -10300.806
+23. Current log-likelihood: -10300.781
+24. Current log-likelihood: -10300.757
+25. Current log-likelihood: -10300.734
+26. Current log-likelihood: -10300.713
+27. Current log-likelihood: -10300.694
+28. Current log-likelihood: -10300.675
+29. Current log-likelihood: -10300.658
+30. Current log-likelihood: -10300.641
+31. Current log-likelihood: -10300.626
+32. Current log-likelihood: -10300.612
+33. Current log-likelihood: -10300.598
+34. Current log-likelihood: -10300.585
+35. Current log-likelihood: -10300.573
+36. Current log-likelihood: -10300.562
+37. Current log-likelihood: -10300.551
+Optimal log-likelihood: -10300.541
+Rate parameters:  A-C: 0.98067  A-G: 8.03264  A-T: 1.55727  C-G: 1.12653  C-T: 11.25518  G-T: 1.00000
+Base frequencies:  A: 0.302  C: 0.195  G: 0.190  T: 0.313
+Site proportion and rates:  (0.589,0.148) (0.246,0.514) (0.124,0.835) (0.041,16.518)
+Parameters optimization took 37 rounds (3.713 sec)
+BEST SCORE FOUND : -10300.541
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+0.610 sec.
+Creating bootstrap support values...
+Split supports printed to NEXUS file Syndemis_ALL.phy.splits.nex
+Total tree length: 0.158
+
+Total number of iterations: 139
+CPU time used for tree search: 39.411 sec (0h:0m:39s)
+Wall-clock time used for tree search: 30.968 sec (0h:0m:30s)
+Total CPU time used: 45.192 sec (0h:0m:45s)
+Total wall-clock time used: 36.359 sec (0h:0m:36s)
+
+Computing bootstrap consensus tree...
+Reading input file Syndemis_ALL.phy.splits.nex...
+49 taxa and 278 splits.
+Consensus tree written to Syndemis_ALL.phy.contree
+Reading input trees file Syndemis_ALL.phy.contree
+Log-likelihood of consensus tree: -10300.606
+
+Analysis results written to: 
+  IQ-TREE report:                Syndemis_ALL.phy.iqtree
+  Maximum-likelihood tree:       Syndemis_ALL.phy.treefile
+  Likelihood distances:          Syndemis_ALL.phy.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          Syndemis_ALL.phy.splits.nex
+  Consensus tree:                Syndemis_ALL.phy.contree
+  Screen log file:               Syndemis_ALL.phy.log
+
+Date and Time: Thu Sep 12 20:00:21 2019
