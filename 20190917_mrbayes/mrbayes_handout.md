@@ -36,9 +36,7 @@ MrBayes takes standard nexus files. The files for this tutorial should be in you
 
 Open the ```SynallBayes.nex``` in the class shared folder in a text editor.
 
-After the end of the nexus Data block which contains the sequences we are trying to analyze, there is a MrBayes block which provides settings for the analysis you want to run in MrBayes.
-
-We have provided comments in this nexus file which are found within the "[]". The computer will ignore text within []. Comments in any scripting language provides a space to give yourself notes on what each line is doing in the anlaysis if necessary. (see below)
+After the end of the nexus Data block which contains the sequences we are trying to analyze, there is a MrBayes block which provides settings for the analysis you want to run in MrBayes. We have provided comments in this nexus file which are found within the "[]". The computer will ignore text within []. Comments in any scripting language provides a space to give yourself notes on what each line is doing in the anlaysis if necessary. (see below)
  
 
 ``` console
