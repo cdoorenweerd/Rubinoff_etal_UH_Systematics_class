@@ -388,8 +388,8 @@ begin mrbayes;
 	unlink shape=(all) pinvar=(all) statefreq=(all) revmat=(all); [unlinking the shape proportion of invarient sites statefrequencies and substitution rates for each partition ]
 	mcmcp ngen=10000000 printfreq=1000 samplefreq=1000 nchains=4 nruns=2 savebrlens=yes; [Setting up MCMC to run 10million generations sampling every 1000 generations and conducting 2 runs (analyses each with 4 chains)]
 	mcmc; [starting MCMC]
-    sump burninfrac=0.25
-    sumt burninfrac=0.25
+    sump burninfrac=0.25 [summarizing parameters with burnin 25%]
+    sumt burninfrac=0.25 [summarizing trees with burnin 25%]
 end;
 
 ```
