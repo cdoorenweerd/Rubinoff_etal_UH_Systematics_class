@@ -78,6 +78,7 @@ lset applyto=(7,8,9) nst=6 rates=invgamma;
 prset applyto=(7,8,9) statefreqpr=fixed(equal);
 ```
 
+## Settings for common evolutionary models
 
 ## GTR
     lset applyto=() nst=6                           # GTR
