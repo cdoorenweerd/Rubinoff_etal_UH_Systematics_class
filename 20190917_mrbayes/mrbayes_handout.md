@@ -57,12 +57,91 @@ begin mrbayes;
 	set partition=Names;  [setting partitions to names]
 	prset ratepr=variable brlenspr=unconstrained:Exp(10.0);  [setting each partition to have differnt rate prior and setting the branch length prior to and unconstrained exponential distribution of 10]
 	lset applyto=(1,2,3,4,5,6,7,8,9) nst=6 rates=invgamma; [setting a GTR (nst=6) +I +G model for each of the 9 partitions]
-	unlink shape=(all) pinvar=(all) statefreq=(all) revmat=(all); [unlinking the shape proportion of invarient sites statefrequencies and substitution rates for each partition ]
-	mcmcp ngen=10000000 printfreq=1000 samplefreq=1000 nchains=4 nruns=2 savebrlens=yes; [Setting up MCMC to run 10million generations sampling every 1000 generations and conducting 2 runs (analyses each with 4 chains)]
+	unlink shape=(all) pinvar=(all) statefreq=(all) revmat=(all); [unlinking the shape parameter, proportion of invarient sites parameter,  statefrequencies parameter and substitution rates parameter for all partitions ]
+	mcmcp ngen=10000000 printfreq=1000 samplefreq=1000 nchains=4 nruns=2 savebrlens=yes; [Setting up MCMC to run 10million generations sampling every 1000 generations and conducting 2 runs (analyses each with 4 chains each)]
 	mcmc; [starting MCMC]
 end;
 
 ```
+
+This tutorial MrBayes block sets up a GTR +I+G model for every partition (9) but this is not always appropriate.
+
+
+The ```applyto``` command allows you to set different models for each partition. 
+
+For example the commands below apply a gtr model to partition 1,2,3 , a HKY model to partition 4,5,6, and a SYM +I +G model to partition 7,8,9.
+
+```
+lset applyto=(1,2,3) nst=6;
+lset applyto=(4,5,6) nst=2;
+lset applyto=(7,8,9) nst=6 rates=invgamma;
+prset applyto=(7,8,9) statefreqpr=fixed(equal);
+```
+
+
+## GTR
+    lset applyto=() nst=6                           # GTR
+    lset applyto=() nst=6 rates=propinv             # GTR + I
+    lset applyto=() nst=6 rates=gamma               # GTR + gamma
+    lset applyto=() nst=6 rates=invgamma            # GTR + I + gamma
+
+## SYM
+
+    lset applyto=() nst=6                           # SYM
+    prset applyto=() statefreqpr=fixed(equal)
+
+    lset applyto=() nst=6 rates=propinv             # SYM + I
+    prset applyto=() statefreqpr=fixed(equal)
+
+    lset applyto=() nst=6 rates=gamma               # SYM + gamma
+    prset applyto=() statefreqpr=fixed(equal)
+
+    lset applyto=() nst=6 rates=invgamma            # SYM + I + gamma
+    prset applyto=() statefreqpr=fixed(equal)
+
+
+## HKY
+
+    lset applyto=() nst=2                           # HKY
+    lset applyto=() nst=2 rates=propinv             # HKY + I
+    lset applyto=() nst=2 rates=gamma               # HKY + gamma
+    lset applyto=() nst=2 rates=invgamma            # HKY + I + gamma
+
+## K2P
+
+    lset applyto=() nst=2                           # K2P
+    prset applyto=() statefreqpr=fixed(equal)
+
+    lset applyto=() nst=2 rates=propinv             # K2P + I
+    prset applyto=() statefreqpr=fixed(equal)
+
+    lset applyto=() nst=2 rates=gamma               # K2P + gamma
+    prset applyto=() statefreqpr=fixed(equal)
+
+    lset applyto=() nst=2 rates=invgamma            # K2P + I + gamma
+    prset applyto=() statefreqpr=fixed(equal)
+
+
+## F81
+
+    lset applyto=() nst=1                           # F81
+    lset applyto=() nst=1 rates=propinv             # F81 + I
+    lset applyto=() nst=1 rates=gamma               # F81 + gamma
+    lset applyto=() nst=1 rates=invgamma            # F81 + I + gamma
+
+## Jukes Cantor  
+
+    lset applyto=() nst=1                           # JC
+    prset applyto=() statefreqpr=fixed(equal)
+
+    lset applyto=() nst=1 rates=propinv             # JC + I
+    prset applyto=() statefreqpr=fixed(equal)
+
+    lset applyto=() nst=1 rates=gamma               # JC + gamma
+    prset applyto=() statefreqpr=fixed(equal)
+
+    lset applyto=() nst=1 rates=invgamma            # JC + I + gamma
+    prset applyto=() statefreqpr=fixed(equal)
 
 
 # Running MrBayes on the cluster
@@ -177,7 +256,7 @@ end;
 
 Once ```mcmc;``` is removed the mrbayes block should look like this and should be ready for burnin and summing the parameters and trees.
 
-```console
+``` console
 begin mrbayes;
    CHARSET Rps5=1-628;      [CHARSET 1]
    CHARSET MDH=629-1290;    [CHARSET 2]
@@ -195,8 +274,8 @@ begin mrbayes;
 	set partition=Names;  [setting partitions to names]
 	prset ratepr=variable brlenspr=unconstrained:Exp(10.0);  [setting each partition to have differnt rate prior and setting the branch length prior to and unconstrained exponential distribution of 10]
 	lset applyto=(1,2,3,4,5,6,7,8,9) nst=6 rates=invgamma; [setting a GTR (nst=6) +I +G model for each of the 9 partitions]
-	unlink shape=(all) pinvar=(all) statefreq=(all) revmat=(all); [setting partition ]
-	mcmcp ngen=10000000 printfreq=1000 samplefreq=1000 nchains=4 nruns=2 savebrlens=yes;
+	unlink shape=(all) pinvar=(all) statefreq=(all) revmat=(all); [unlinking the shape proportion of invarient sites statefrequencies and substitution rates for each partition ]
+	mcmcp ngen=10000000 printfreq=1000 samplefreq=1000 nchains=4 nruns=2 savebrlens=yes; [Setting up MCMC to run 10million generations sampling every 1000 generations and conducting 2 runs (analyses each with 4 chains)]
 
 end;
 
@@ -288,7 +367,7 @@ Open ```SynallBayes.nex.con.tre``` in figtree for viewing.
 
 The method described above gives you the best control over your data and ensures thorough checking of your output. If you feel comfortable however, a shortcut method would be to include the ```sump``` and ```sumt``` commands directly in the initial input file, after the ```mcmc``` command. Your bayes block would then look like:
 
-```console
+``` console
 begin mrbayes;
    CHARSET Rps5=1-628;      [CHARSET 1]
    CHARSET MDH=629-1290;    [CHARSET 2]
@@ -306,14 +385,14 @@ begin mrbayes;
 	set partition=Names;  [setting partitions to names]
 	prset ratepr=variable brlenspr=unconstrained:Exp(10.0);  [setting each partition to have differnt rate prior and setting the branch length prior to and unconstrained exponential distribution of 10]
 	lset applyto=(1,2,3,4,5,6,7,8,9) nst=6 rates=invgamma; [setting a GTR (nst=6) +I +G model for each of the 9 partitions]
-	unlink shape=(all) pinvar=(all) statefreq=(all) revmat=(all); [setting partition ]
-	mcmcp ngen=10000000 printfreq=1000 samplefreq=1000 nchains=4 nruns=2 savebrlens=yes;
-   mcmc;
-   sump burninfrac=.25;
-   sumt burninfrac=.25;
-
+	unlink shape=(all) pinvar=(all) statefreq=(all) revmat=(all); [unlinking the shape proportion of invarient sites statefrequencies and substitution rates for each partition ]
+	mcmcp ngen=10000000 printfreq=1000 samplefreq=1000 nchains=4 nruns=2 savebrlens=yes; [Setting up MCMC to run 10million generations sampling every 1000 generations and conducting 2 runs (analyses each with 4 chains)]
+	mcmc; [starting MCMC]
+    sump burninfrac=0.25
+    sumt burninfrac=0.25
 end;
 
 ```
 
 This will apply a burnin value of 25% of the trees. Always use Tracer to check if that was appropriate.
+
