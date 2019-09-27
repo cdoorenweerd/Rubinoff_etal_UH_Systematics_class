@@ -3,7 +3,7 @@ library(ggtree)
 library(ggplot2)
 
 # files
-tree_fn = "five_area_DEC.tre.ase.tre"
+tree_fn = "five_area_DEC.tre"
 label_fn = "five_area_DEC.state_labels.txt"
 color_fn = "range_colors_5area.txt"
 
