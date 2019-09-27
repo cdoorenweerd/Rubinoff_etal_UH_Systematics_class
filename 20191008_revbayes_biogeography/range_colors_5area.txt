@@ -4,7 +4,7 @@ range,color
 "N","#1AC804"
 "A","#FFFF0B"
 "B","#FB0007"
-"WE","#0B66FF"
+"WE","#ffaa0b"
 "WN","#000000"
 "EN","#000000"
 "WA","#6D6D6D"
