@@ -215,6 +215,8 @@ Examine the different parameters and play with burnin to see if the mcmc sampled
 
 Does it look good?
 
+If it doesnt look good you may need to run your analysis again or change your priors or parameters. 
+
 
 # Summarizing the estimated parameters and trees 
 
@@ -302,7 +304,9 @@ Load MrBayes.
 
 ```module load bio/MrBayes/3.2.7-intel-2018.5.274-mpi```
 
-then execute MrBayes.
+then navigate to the folder which contains your datafile ```SynallBayes.nex```
+
+and execute MrBayes with the command below.
 
 ``` mb ```
 
@@ -331,12 +335,12 @@ MrBayes >
 
 ```
 
-load the modified dataset file ```SynallBayes.nex``` by using this command
+Load the modified dataset file ```SynallBayes.nex``` by using this command
 
 
 ``` execute SynallBayes.nex```
 
-After file is loaded it should say on the last two lines
+After the file is loaded it should say on the last two lines
 
 ```
    Exiting mrbayes block
