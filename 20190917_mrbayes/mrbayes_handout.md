@@ -365,6 +365,12 @@ Default burnin is 25% but you can change this by ```sumt burnin=1000``` or ```su
 
 There should be ```SynallBayes.nex.con.tre``` which is your consensus tree with posterior probablities 
 
+Now your done with MrBayes 
+
+you can quit the program with ```quit``` command
+
+Type ```ls``` and you should see ```SynallBayes.nex.con.tre``` in the folder.
+
 Open ```SynallBayes.nex.con.tre``` in figtree for viewing. 
 
 
