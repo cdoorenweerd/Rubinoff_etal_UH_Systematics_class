@@ -1,14 +1,13 @@
-# 20190912_UH_Systematics_class
-Jupyter notebooks and scripts used during the 2019 fall UH PEPS 662 Systematics class
+Jupyter notebooks and scripts used during the fall UH PEPS 662 Systematics class
 
-# List of software that will be used during the course:
+# Software that will be used during the course:
 
-### File transfer
-Mac or PC: [Filezilla (client)](https://filezilla-project.org), [Cyberduck](https://cyberduck.io/download/), [Globus](https://www.globus.org)
+### File transfer to MANA supercomputing cluster
+Mac or PC: [Filezilla (client)](https://filezilla-project.org) or [Cyberduck](https://cyberduck.io/download/)
 
 ### Text editors
-Mac: [BBEdit](https://www.barebones.com/products/bbedit/), [Visual Studio Code](https://code.visualstudio.com)
-PC: [Notepad++](https://notepad-plus-plus.org), [Visual Studio Code](https://code.visualstudio.com)
+Mac: [BBEdit](https://www.barebones.com/products/bbedit/) or [Visual Studio Code](https://code.visualstudio.com)
+PC: [Notepad++](https://notepad-plus-plus.org) or [Visual Studio Code](https://code.visualstudio.com)
 
 NB. BBEdit and Notepad++ are lightweight text editors, Visual Studio Code is a larger program that includes a terminal interface to directly run and debug scripts (like e.g. in RStudio).
 
@@ -21,15 +20,15 @@ NB. If your lab has a license for Geneious, we recommend using that
 Mac or PC: [Paup*](http://phylosolutions.com/paup-test/)
 
 ### Maximum Likelihood analyses
-HPC: IQtree, installed through Anaconda
+MANA: IQ-tree
 NB. will be explained in class
 
 ### Bayesian analyses
-HPC: MrBayes
+MANA: RevBayes
 NB. will be explained in class
 
 ### Tree viewing
-Mac or PC: [FigTree](https://github.com/rambaut/figtree/releases)
+Mac or PC: [FigTree](https://github.com/rambaut/figtree/releases) or Geneious.
 
 ### Analyze Bayesian trace files
 Mac or PC: [Tracer](https://beast.community/tracer)

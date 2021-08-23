@@ -1,13 +1,13 @@
-# 20190917 Maximum likelihood with IQtree on the UH cluster
+# Maximum likelihood with IQtree on the UH cluster
 
 Consider: what is ML and difference with MP and Bayesian?
 What type of settings do we want to configure during a ML analysis?
 
 Files required:
-- Phylip formatted alignment
+- Multisequence alignment file (e.g., in FASTA or PHYLIP format)
 - Slurm script
 
-IQTree is not available as a module on the cluster, but it is available as a module in Anaconda, and Anaconda is available on the cluster.
+IQ-Tree is not available as a module on the cluster, but it is available as a module in Anaconda, and Anaconda is available on the cluster.
 
 [Anaconda (distribution):](https://www.anaconda.com/distribution/) is a package & environment manager; it installs (compiles) packages and their dependencies in a virtual environment. One time set-up.
 
@@ -16,7 +16,7 @@ IQTree is not available as a module on the cluster, but it is available as a mod
 ### 1. Connect to the cluster using SSH
 
 ```console
-(base) dhcp-168-105-208-186:bash_kernel cdoorenweerd$ ssh uhhpc
+(base) dhcp-168-105-208-186:bash_kernel cdoorenweerd$ ssh mana
 Duo two-factor login for cdoorenw
 
 Enter a passcode or select one of the following options:
@@ -69,25 +69,25 @@ PATH                                    QUOTA     USED      PCT USED
 ### 2. Next, start an interactive session on the ```pep662``` or ```sandbox``` node
 
 ```console
-[cdoorenw@login002 ~]$ srun -I --partition pep662 --account pep662_f2019 --cores 1 --mem=4gb --time 0-04:00:00 --pty /bin/bash
+[cdoorenw@login002 ~]$ srun -I30 --partition pep662 --account pep662_f2021 --cores 1 --mem=4gb --time 0-04:00:00 --pty /bin/bash
 ```
 
 or
 
 ```console
-[cdoorenw@login002 ~]$ srun -I --partition sandbox --cores 1 --mem=4gb --time 0-04:00:00 --pty /bin/bash
+[cdoorenw@login002 ~]$ srun -I30 --partition sandbox --cores 1 --mem=4gb --time 0-04:00:00 --pty /bin/bash
 ```
 
-Note how the @ address changes from ```[cdoorenw@login002 ~]$ ``` to something like: ```[cdoorenw@node-0040 ~]$ ```
+Note how the @ address changes from ```[cdoorenw@login002 ~]$ ``` to something like: ```[cdoorenw@node-0040 ~]$ ``` to tell you that you are now on a compute node.
 
 ### 3. Load the Anaconda module
 
-Check which modules are loaded with:
+Check which cluster modules are currently loaded with:
 
 ```console
 [cdoorenw@node-0040 ~]$ module list
 ```
-None are currently loaded. Load the Anaconda module with:
+None are currently loaded. Go ahead and load the Anaconda module with:
 
 ```console
 [cdoorenw@node-0040 ~]$ module load lang/Anaconda3/5.1.0
@@ -97,7 +97,7 @@ Currently Loaded Modules:
   1) lang/Anaconda3/5.1.0
 ```
 
-### 4. Create an environment with IQTREE
+### 4. Create an Anaconda environment with IQ-TREE
 
 [Conda environments documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 
@@ -106,7 +106,7 @@ See which environments are already installed:
 [cdoorenw@node-0040 ~]$ conda info --envs
 ```
 
-Should be just the base. Create a new environment [with IQtree](https://anaconda.org/bioconda/iqtree)
+Should be just the base. Now create a new environment [with IQ-tree](https://anaconda.org/bioconda/iqtree)
 
 ```console
 [cdoorenw@node-0040 ~]$ conda create --name iqtenv -c bioconda iqtree
@@ -128,13 +128,13 @@ All set! Exit the interactive srun with ```exit```
 
 Now that our environment is set-up, we can prepare the input files. Use sftp (Filezilla or Cyberduck) to retrieve the input files from the ```pep662_class/class_shared``` folder on the cluster. Copy the folder to your local computer (e.g. to your desktop). Use a text editor to examine the input files and adjust them to your needs.
 
-When ready, use sftp to move the folder with input files to the ```nfs_fs02``` drive on the cluster.
+When ready, use sftp to move the folder with input files to the ```lus_scratch``` drive on the cluster.
 
 # Starting a job
 
-ALWAYS START SLURM JOBS FROM WITHIN THE ```nfs_fs02``` FOLDER!!!
+ALWAYS START SLURM JOBS FROM WITHIN THE ```lus_scratch``` FOLDER!!!
 
-Connect to the cluster using SSH. Navigate to the ```nfs_fs02``` subfolder that has the input files and start a batch submission
+Connect to the cluster using SSH. Navigate to the ```lus_scratch``` subfolder that has the input files and start a batch submission
 
 ```console
 [cdoorenw@login002 ~]$ sbatch <slurm script>
@@ -144,5 +144,5 @@ You can see the status of queue on our partition with:
 
 ```console
 [cdoorenw@login002 ~]$ squeue -p pep662
-[cdoorenw@login002 ~]$ squeue -u pep662_f2019
+[cdoorenw@login002 ~]$ squeue -u pep662_f2021
 ```
