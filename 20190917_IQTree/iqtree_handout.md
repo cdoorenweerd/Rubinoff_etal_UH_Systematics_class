@@ -126,7 +126,7 @@ All set! Exit the interactive srun with ```exit```
 
 # IQ-Tree homework assignment
 
-Now that our environment is set-up, we can prepare the input files. An example slurm script (YOU WILL NEED TO MODIFY THIS) and several aligment files for you to choose from are provided. Use a text-editor to verify and prepare your multisequence alignment file and slurm script with the appropriate IQ-Tree parameters to run. Use sftp (Filezilla or Cyberduck) to move the files to the cluster and start a run.
+Now that our environment is set-up, we can prepare the input files. An example slurm script (YOU WILL NEED TO MODIFY THIS) and several aligment files for you to choose from are provided. Use a text-editor to verify and prepare your multisequence alignment file and slurm script with the appropriate IQ-Tree parameters to run a MAXIMUM LIKELIHOOD analysis with BRANCH SUPPORT. Use sftp (Filezilla or Cyberduck) to move the files to the cluster and start a run.
 
 ALWAYS START SLURM JOBS FROM WITHIN THE ```lus_scratch``` FOLDER!!!
 
@@ -147,7 +147,7 @@ You can see the status of the queue on our partition with:
 
 A maximum of two-pages report must cover:
 
-- Explain why you used this analysis method ("because you were told to do so" gives 0 points)
+- Explain why you used this analysis method ("because you were told to do so" gives 0 points) as opposed to other tree inference methods
 - Explain how you decided on the settings (paramters) that you chose and clearly write which ones you used.
 - Figure the result(s) (tree(s))
 - Briefly describe the results and what they mean
