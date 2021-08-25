@@ -124,13 +124,9 @@ base                  *  /opt/apps/software/lang/Anaconda3/5.1.0
 
 All set! Exit the interactive srun with ```exit```
 
-# Prepare input files
+# IQ-Tree homework assignment
 
-Now that our environment is set-up, we can prepare the input files. Use sftp (Filezilla or Cyberduck) to retrieve the input files from the ```pep662_class/class_shared``` folder on the cluster. Copy the folder to your local computer (e.g. to your desktop). Use a text editor to examine the input files and adjust them to your needs.
-
-When ready, use sftp to move the folder with input files to the ```lus_scratch``` drive on the cluster.
-
-# Starting a job
+Now that our environment is set-up, we can prepare the input files. An example slurm script (YOU WILL NEED TO MODIFY THIS) and several aligment files for you to choose from are provided. Use a text-editor to verify and prepare your multisequence alignment file and slurm script with the appropriate IQ-Tree parameters to run. Use sftp (Filezilla or Cyberduck) to move the files to the cluster and start a run.
 
 ALWAYS START SLURM JOBS FROM WITHIN THE ```lus_scratch``` FOLDER!!!
 
@@ -140,9 +136,20 @@ Connect to the cluster using SSH. Navigate to the ```lus_scratch``` subfolder th
 [cdoorenw@login002 ~]$ sbatch <slurm script>
 ```
 
-You can see the status of queue on our partition with:
+You can see the status of the queue on our partition with:
 
 ```console
 [cdoorenw@login002 ~]$ squeue -p pep662
 [cdoorenw@login002 ~]$ squeue -u pep662_f2021
 ```
+
+## Homework assignment report
+
+A maximum of two-pages report must cover:
+
+- Explain why you used this analysis method ("because you were told to do so" gives 0 points)
+- Explain how you decided on the settings (paramters) that you chose and clearly write which ones you used.
+- Figure the result(s) (tree(s))
+- Briefly describe the results and what they mean
+
+
