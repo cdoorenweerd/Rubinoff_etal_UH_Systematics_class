@@ -1,9 +1,8 @@
-# Maximum likelihood with IQtree on the UH cluster
+# Maximum likelihood with IQ-Tree on the UH Mana cluster
 
-Consider: what is ML and difference with MP and Bayesian?
-What type of settings do we want to configure during a ML analysis?
+Consider: what is ML and how is it different from MP and Bayesian? What type of settings do we want to configure during a ML analysis?
 
-Files required:
+Input files required:
 - Multisequence alignment file (e.g., in FASTA or PHYLIP format)
 - Slurm script
 
