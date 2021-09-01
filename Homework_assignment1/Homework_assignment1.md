@@ -13,12 +13,12 @@ Before starting the homework assignment, check that you have installed the softw
 - Title, author, date
 - An introduction section explaining how the three analyses methods used in the assignment differ from each other
 - A methods section explaining the parameters you used and why (e.g., I ran x ultrafast bootstrap generations to ...  for each analysis. Explain which substitution model(s) you selected and why, etc)
-- A results and discussion section describing the results; what is reliable, how do results differ between analyses and describe the relationships between (main groups of) taxa in the tree
+- A results and discussion section describing the results; what is reliable, how do results differ between analyses and describe the relationships between (main groups of) taxa in the tree; which are monophyletic?
 - Figures of the resulting trees and other figures that are relevant to the results, numbered in order as they appear in the text.
 
 The report must not exceed two (2) pages, excluding figures. Deadline to turn in is indicated in the syllabus.
 
-## Maximum likelihood with IQ-Tree, unpartitioned
+## 1. Maximum likelihood with IQ-Tree, unpartitioned
 
 1. Download the input files from the Homework 1 folder on the cluster (slurm script + alignment + partitions file + sample info file) using an SFTP file transfer program.
 
@@ -45,9 +45,9 @@ You can see the status of the queue on our partition with:
 ```
 
 
-5. After your analysis finishes (you will receive an email when it does), copy the whole folder back to your local computer via SFTP. Have a look at all the result files, and use what you need for the methods section of your homework report. Open the treefile with FigTree, root the tree appropriately and show branch support values; create a figure. If needed, use the ```Tree_tip_renamer_script``` provided in this Github to modify the taxon names.
+5. After your analysis finishes (you will receive an email when it does), copy the whole folder back to your local computer via SFTP. Have a look at all the result files, and use what you need for the methods section of your homework report. Open the treefile with FigTree, root the tree appropriately and show branch support values; create a figure.
 
-## Maximum likelihood with IQ-Tree, partitioned
+## 2. Maximum likelihood with IQ-Tree, partitioned
 
 This analysis will be like the unpartitioned IQ-Tree analysis you performed, but with an added parameter where you specify [a partitions file](http://www.iqtree.org/doc/Advanced-Tutorial) to treat each of the seven genes that make up the concatenated alignment separately during the analyses, and at the end combine the results of all into a single tree. The IQ-Tree command for this analysis can look like:
 
@@ -58,7 +58,7 @@ iqtree -s <your alignment file> --runs 10 -bb 5000 -nt AUTO -p partitions.nex
 It is easiest if you make a new folder for this analysis, and transfer it onto the cluster to start this new analysis.
 
 
-## Bayesian tree inference with MrBayes
+## 3. Bayesian tree inference with MrBayes
 
 As a third analysis, you will run Bayesian tree inference with [RevBayes](https://revbayes.github.io/tutorials/intro/getting_started.html). 
 
