@@ -2,7 +2,7 @@
 
 ## Install on your computer locally:
 
-### File transfer software
+### SFTP File transfer software
 [Filezilla (client)](https://filezilla-project.org) or [Cyberduck](https://cyberduck.io/download/)
 
 ### A text editor
@@ -13,14 +13,14 @@
 
 ### Processing results files
 - [Tracer](https://beast.community/tracer) for visualizing Bayesian convergence statistics
-- [FigTree](https://github.com/rambaut/figtree/releases)
+- [FigTree](https://github.com/rambaut/figtree/releases) for visualizing trees
 - [R](https://www.r-project.org/) and [Rstudio](https://www.rstudio.com/)
 - [the R package RevGadgets](https://revbayes.github.io/tutorials/intro/revgadgets.html)
 
 ### Neighbor joining / maximum parsimony analyses
 - [Paup*](http://phylosolutions.com/paup-test/)
 
-## Software that we will use on the [Mana cluster](https://datascience.hawaii.edu/hpc/) supercomputing cluster:
+## Software that we will use on the [Mana](https://datascience.hawaii.edu/hpc/) supercomputing cluster:
 
 - [Anaconda](https://anaconda.org/) environments
 - [IQ-tree](http://www.iqtree.org/) maximum likelihood

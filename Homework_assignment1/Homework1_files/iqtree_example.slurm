@@ -1,6 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=iqtree
 #SBATCH --partition=peps662
+#SBATCH --account=peps662
 ## 3 day max run time for public partitions, except 4 hour max runtime for the sandbox partition
 #SBATCH --time=3-00:00:00 ## time format is DD-HH:MM:SS
 ## task-per-node x cpus-per-task should not typically exceed core count on an individual node
@@ -21,7 +22,7 @@
 source ~/.bash_profile
 
 module load lang/Anaconda3/5.1.0
-source activate iqtree
+source activate iqtenv
 
 ## http://www.iqtree.org/doc/Command-Reference
 iqtree -s 20210813_COI_1493.fas --runs 5 -bb 1000 -nt AUTO
