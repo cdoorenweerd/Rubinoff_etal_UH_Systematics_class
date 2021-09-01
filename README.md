@@ -1,26 +1,28 @@
-# Software that will be used during the course:
+# Software that will be used during the course
 
-### File transfer to Mana supercomputing cluster
+## Install on your computer locally:
+
+### File transfer software
 [Filezilla (client)](https://filezilla-project.org) or [Cyberduck](https://cyberduck.io/download/)
 
-### Text editors
+### A text editor
 [BBEdit](https://www.barebones.com/products/bbedit/) (Mac),  [Notepad++](https://notepad-plus-plus.org) (PC) or [Visual Studio Code](https://code.visualstudio.com). BBEdit and Notepad++ are lightweight text editors, Visual Studio Code is a larger program that includes a terminal interface to directly run and debug scripts (like e.g. in RStudio).
 
 ### Sequence alignment / editing
-- [Aliview](http://www.ormbunkar.se/aliview/downloads/)
-- [Geneious](https://www.geneious.com/) -- if your lab has a license
+[Aliview](http://www.ormbunkar.se/aliview/downloads/) or, if your lab has a license, [Geneious](https://www.geneious.com/)
+
+### Processing results files
+- [Tracer](https://beast.community/tracer) for visualizing Bayesian convergence statistics
+- [FigTree](https://github.com/rambaut/figtree/releases)
+- [R](https://www.r-project.org/) and [Rstudio](https://www.rstudio.com/)
+- [the R package RevGadgets](https://revbayes.github.io/tutorials/intro/revgadgets.html)
 
 ### Neighbor joining / maximum parsimony analyses
 - [Paup*](http://phylosolutions.com/paup-test/)
 
-### Maximum likelihood analyses
-- [IQ-tree](http://www.iqtree.org/) in an [Anaconda](https://anaconda.org/) environment on the [Mana cluster](https://datascience.hawaii.edu/hpc/). Installation procedure will be covered during lab.
+## Software that we will use on the [Mana cluster](https://datascience.hawaii.edu/hpc/) supercomputing cluster:
 
-### Bayesian analyses
+- [Anaconda](https://anaconda.org/) environments
+- [IQ-tree](http://www.iqtree.org/) maximum likelihood
+- [MrBayes](http://nbisweden.github.io/MrBayes/) Bayesian inference
 - [RevBayes](https://revbayes.github.io/) probablistic graphical modelling
-- [Tracer](https://beast.community/tracer) for visualizing convergence statistics
-
-### Tree plotting and viewing
-- [FigTree](https://github.com/rambaut/figtree/releases)
-- [the R package RevGadets](https://revbayes.github.io/tutorials/intro/revgadgets.html)
- - Geneious (optionally)
