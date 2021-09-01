@@ -25,4 +25,4 @@ module load lang/Anaconda3/5.1.0
 source activate iqtenv
 
 ## http://www.iqtree.org/doc/Command-Reference
-iqtree -s 20210813_COI_1493.fas --runs 5 -bb 1000 -nt AUTO
+iqtree -s <your alignment.fas> --runs 10 -bb 5000 -nt AUTO

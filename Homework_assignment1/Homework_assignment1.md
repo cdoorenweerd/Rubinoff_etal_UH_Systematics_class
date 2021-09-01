@@ -5,15 +5,7 @@ For this homework assignment you will run three analyses:
 - A partitioned maximum likelihood analysis
 - A Bayesian unpartitioned analysis
 
-Before starting the homework assignment, check that you have installed the software listed in the README.md on your computer.
-
-
-[] Run IQ-tree unpartitioned
-[] Run IQ-tree partitioned
-[] Run MrBayes unpartitioned
-[] Tracer
-[] FigTree
-
+Before starting the homework assignment, check that you have installed the software listed in the README.md
 
 
 ## Homework assignment 1 report must include:
@@ -28,13 +20,13 @@ The report must not exceed two (2) pages, excluding figures. Deadline to turn in
 
 ## Maximum likelihood with IQ-Tree, unpartitioned
 
-1. Download the input files from the Homework 1 folder on the cluster (slurm + alignment + partitions file) using an SFTP file transfer program. Several alignment files are available, pick one of your liking - but use the same one for all three analyses!
+1. Download the input files from the Homework 1 folder on the cluster (slurm script + alignment + partitions file + sample info file) using an SFTP file transfer program.
 
-2. On your computer, use a text editor to browse through the files. Select the alignment file that you will use for the analysis run. Update the slurm script with your parameters and settings. Edit to your liking with your favorite text editor. For suggested parameters for IQ-Tree see below, but have a look at the [IQ-Tree command reference](http://www.iqtree.org/doc/Command-Reference) for additional or different parameters you think are important.
+2. On your computer, use a text editor to browse through the files to get familiar with the formatting - can you recognize the file format from the content? Update the slurm script with your parameters and settings. Edit to your liking with your favorite text editor. Suggested parameters for IQ-Tree are shown below. Have a look at the [IQ-Tree command reference](http://www.iqtree.org/doc/Command-Reference) to see what they will do!
 
 
 ```
-iqtree -s <your alignment file> --runs 5 -bb 1000 -nt AUTO
+iqtree -s <your alignment file> --runs 10 -bb 5000 -nt AUTO
 ```
 
 
@@ -57,7 +49,12 @@ You can see the status of the queue on our partition with:
 
 ## Maximum likelihood with IQ-Tree, partitioned
 
-0. LIke the one before, but adding a parameter
+This analysis will be like the unpartitioned IQ-Tree analysis you performed, but with an added parameter where you specify [a partitions file](http://www.iqtree.org/doc/Advanced-Tutorial) to treat each of the seven genes that make up the concatenated alignment separately during the analyses, and at the end combine the results of all into a single tree. The IQ-Tree command for this analysis can look like:
+
+```
+iqtree -s <your alignment file> --runs 10 -bb 5000 -nt AUTO -p partitions.nex
+```
+
 
 ## Bayesian tree inference with MrBayes
 

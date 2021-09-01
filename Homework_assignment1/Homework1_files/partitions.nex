@@ -1,0 +1,11 @@
+#nexus
+begin sets;
+	charset CAD = 1-791;
+	charset COI1 = 792-1449;
+	charset COI2 = 1450-2254;
+	charset EF1a = 2255-3009;
+	charset IDH = 3010-3682;
+	charset RpS5 = 3683-4271;
+	charset WG = 4272-4674;
+    charpartition bygene = :CAD, :COI1, :COI2, :EF1a, :IDH, :RpS5, :WG;
+end;
