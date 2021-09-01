@@ -8,7 +8,7 @@ For this homework assignment you will run three analyses:
 Before starting the homework assignment, check that you have installed the software listed in the README.md
 
 
-## Homework assignment 1 report must include:
+## Homework assignment 1 REPORT must include:
 
 - Title, author, date
 - An introduction section explaining how the three analyses methods used in the assignment differ from each other
@@ -16,7 +16,7 @@ Before starting the homework assignment, check that you have installed the softw
 - A results and discussion section describing the results; what is reliable, how do results differ between analyses and describe the relationships between (main groups of) taxa in the tree; which are monophyletic?
 - Figures of the resulting trees and other figures that are relevant to the results, numbered in order as they appear in the text.
 
-The report must not exceed two (2) pages, excluding figures. Deadline to turn in is indicated in the syllabus.
+The report must not exceed two (2) pages with 11pt font or larger, excluding figures. Deadline to turn in is indicated in the syllabus.
 
 ## 1. Maximum likelihood with IQ-Tree, unpartitioned
 
@@ -58,7 +58,7 @@ iqtree -s <your alignment file> --runs 10 -bb 5000 -nt AUTO -p partitions.nex
 It is easiest if you make a new folder for this analysis, and transfer it onto the cluster to start this new analysis.
 
 
-## 3. Bayesian tree inference with MrBayes
+## 3. Bayesian tree inference with RevBayes
 
 As a third analysis, you will run Bayesian tree inference with [RevBayes](https://revbayes.github.io/tutorials/intro/getting_started.html). 
 
@@ -73,17 +73,4 @@ Make sure all the input files (slurm script, alignment file and revbayes script)
 
 
 2. After the run finished, copy the files over to your local computer and use Tracer to see if the runs converged and if they ran for enough generations. Include these graphs in your report.
-
-
-
-
-
-
-
-
-
-
-
-
-
 
