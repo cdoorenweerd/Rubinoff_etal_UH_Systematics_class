@@ -62,7 +62,7 @@ PATH                                    QUOTA     USED      PCT USED
 ### 2. Next, start an interactive session on the ```peps662``` or ```sandbox``` node
 
 ```console
-[cdoorenw@login002 ~]$ srun -I30 --partition peps662 --account pep662_f2021 --cores 1 --mem=4gb --time 0-04:00:00 --pty /bin/bash
+[cdoorenw@login002 ~]$ srun -I30 --partition peps662 --account peps662 --cores 1 --mem=4gb --time 0-04:00:00 --pty /bin/bash
 ```
 
 or

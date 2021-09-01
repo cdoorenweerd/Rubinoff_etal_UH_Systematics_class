@@ -55,14 +55,24 @@ This analysis will be like the unpartitioned IQ-Tree analysis you performed, but
 iqtree -s <your alignment file> --runs 10 -bb 5000 -nt AUTO -p partitions.nex
 ```
 
+It is easiest if you make a new folder for this analysis, and transfer it onto the cluster to start this new analysis.
+
 
 ## Bayesian tree inference with MrBayes
 
-0. run MrBayes
-1. Use Tracer to see if the runs converged and if they were sufficiently long
+As a third analysis, you will run Bayesian tree inference with [RevBayes](https://revbayes.github.io/tutorials/intro/getting_started.html). 
+
+1. Using a text editor, prepare a slurm script that will run RevBayes. This analysis will require a revbayes script that specifies the parameters for the analysis -- instead of passing them directly with flags such as with IQ-Tree. The revbayes script is provided in the Homework 1 files folder on the cluster, open it and read through it. It instructs revbayes to perform two separate MCMC runs. Make a copy of the slurm script you used for IQ-Tree and modify it to load the RevBayes module on the cluster and start RevBayes with lines like:
+
+```
+module load bio/RevBayes/1.0.11-intel-2018.5.274-mpi
+rb-mpi <myrevbayesscript.rev>
+```
+
+Make sure all the input files (slurm script, alignment file and revbayes script) are in the same folder as where you start the run.
 
 
-
+2. After the run finished, copy the files over to your local computer and use Tracer to see if the runs converged and if they ran for enough generations. Include these graphs in your report.
 
 
 
