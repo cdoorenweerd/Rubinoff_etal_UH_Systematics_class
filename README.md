@@ -24,5 +24,4 @@
 
 - [Anaconda](https://anaconda.org/) environments
 - [IQ-tree](http://www.iqtree.org/) maximum likelihood
-- [MrBayes](http://nbisweden.github.io/MrBayes/) Bayesian inference
-- [RevBayes](https://revbayes.github.io/) probablistic graphical modelling
+- [RevBayes](https://revbayes.github.io/) probablistic graphical modelling and Bayesian inference

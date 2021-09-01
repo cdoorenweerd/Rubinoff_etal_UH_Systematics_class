@@ -63,5 +63,5 @@ monitors.append( mnFile(filename="Saturnia.trees", printgen=100, psi) )
 
 monitors.append( mnScreen(printgen=100) )
 
-mymcmc = mcmc(mymodel, monitors, moves, nruns=2)
+mymcmc = mcmc(mymodel, monitors, moves, nruns=4)
 mymcmc.run(generations=100000)
