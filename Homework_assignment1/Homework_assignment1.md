@@ -72,5 +72,5 @@ rb-mpi <myrevbayesscript.rev>
 Make sure all the input files (slurm script, alignment file and revbayes script) are in the same folder as where you start the run.
 
 
-2. After the run finished, copy the files over to your local computer and use Tracer to see if the runs converged and if they ran for enough generations. Include these graphs in your report.
+2. After the run finishes, copy the files over to your local computer and load (drag and drop) the ```.log``` files into Tracer. Verify if the separate runs converged on the same optimum, and if they ran for enough generations (ESS values >>200). For further information on what to look for, see [this tutorial](https://beast.community/tracer_convergence). Include relevant graphs in your report.
 
