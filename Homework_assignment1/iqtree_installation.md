@@ -9,7 +9,6 @@ IQ-Tree is not available as a module on the cluster, but it is available as a mo
 ### 1. Connect to the cluster using SSH
 
 ```console
-(base) dhcp-168-105-208-186:bash_kernel cdoorenweerd$ ssh mana
 Duo two-factor login for cdoorenw
 
 Enter a passcode or select one of the following options:
@@ -22,41 +21,57 @@ Passcode or option (1-3): 1
 
 Pushed a login request to your device...
 Success. Logging you in...
-========================================================================
-Unauthorized access is prohibited by law in accordance with Chapter 708,
-Hawaii Revised Statutes; all use is subject to University of Hawaii
-Executive Policy E2.210.(http://go.hawaii.edu/JYj)
-========================================================================
+============================================ LOGIN NODE INFO ============================================
+Hostname: login002 
+Date    : Thu Sep  2 00:49:49 UTC 2021
+Uptime :  00:49:49 up  2:30,  6 users,  load average: 0.11, 0.06, 0.05
+=========================================================================================================
 
-===================== ANNOUNCEMENTS=====================================
+=========================================================================================================
+                                 ##     ##    ###    ##    ##    ###                                     
+                                 ###   ###   ## ##   ###   ##   ## ##                                    
+                                 #### ####  ##   ##  ####  ##  ##   ##                                   
+                                 ## ### ## ##     ## ## ## ## ##     ##                                  
+                                 ##     ## ######### ##  #### #########                                  
+                                 ##     ## ##     ## ##   ### ##     ##                                  
+                                 ##     ## ##     ## ##    ## ##     ##                                  
+=========================================================================================================
+ Unauthorized access is prohibited by law in accordance with Chapter 708 of the Hawaii Revised Statutes  
+     all use is subject to University of Hawaii Executive Policy EP 2.210.(http://go.hawaii.edu/JYj)     
+=========================================================================================================
 
-New cluster information: https://www.hawaii.edu/its/ci/xcat
-FAQ: http://go.hawaii.edu/jdG
+                  Mana is also subject to the additional University of Hawaii policies                   
+_________________________________________________________________________________________________________
+Executive Policy EP 2.214: Data Classification & Security Guidelines (http://go.hawaii.edu/FLG)
+Executive Policy EP 2.215: Data Governance Policy (http://go.hawaii.edu/GLa)
+=========================================================================================================
+
+=========================================  INFORMATIONAL LINKS  =========================================
+Data Governance: https://www.hawaii.edu/uhdatagov/
+UH Information Security: https://www.hawaii.edu/infosec/
+Office of Research Compliance https://researchcompliance.hawaii.edu/
+
+Mana General Information: https://datascience.hawaii.edu/hpc/
+Mana FAQ, tutorials and details: http://go.hawaii.edu/JLA
 Latest HPC-101 (Onboarding) slides: http://go.hawaii.edu/wL
+=========================================================================================================
 
-------------------------------------------------------------------------
-
+================================================  HINTS  ================================================
 Up-to-date sample SLURM scripts: /mnt/config/examples
 The modules list has hidden modules.
 To view the full module list: module --show_hidden av
-
-========================================================================
-
-========================================================================
-Hostname: login002 
-Date    : Thu Sep 12 20:42:33 UTC 2019
-Uptime :  20:42:33 up 16:19, 12 users,  load average: 0.15, 0.19, 0.14
-
-========================================================================
-
-============================== USAGE ==================================
-
-PATH                                    QUOTA     USED      PCT USED
-/mnt/group/nfs_fs01/pep662_class        50G       512K      1%
-/home/cdoorenw                          50G       241M      1%
-/mnt/scratch/nfs_fs02/cdoorenw          5.0T      896K      1%
-
-========================================================================
+Mana FAQ, tutorials and details: http://go.hawaii.edu/JLA
+=========================================================================================================
+                                                                                                         
+========================================== YOUR CUIRRENT USAGE ==========================================
+PATH                                     SYMLINK        QUOTA  USED(%)      INODE QUOTA  INODE USED
+_______________________________________  _____________  _____  ___________  ___________  __________
+/home/cdoorenw                                          50G    5.8G (12%)   -            -
+/mnt/group/nfs_fs01/class_peps662        peps662_group  50G    128K (1%)    -            -
+/mnt/scratch/lustre_01/scratch/cdoorenw  lus_scratch    5T     285.3M (0%)  3072000      38
+/mnt/scratch/nfs_fs02/cdoorenw           nfs_fs02       5.0T   256K (1%)    -            -
+/mnt/scratch/nfs_fs02/cdoorenw           nfs_scratch    5.0T   256K (1%)    -            -
+=========================================================================================================
 ```
 
 ### 2. Next, start an interactive session on the ```peps662``` or ```sandbox``` node
