@@ -65,3 +65,15 @@ monitors.append( mnScreen(printgen=100) )
 
 mymcmc = mcmc(mymodel, monitors, moves, nruns=4)
 mymcmc.run(generations=100000)
+
+
+###################
+# Summarize trees #
+###################
+
+# Read in tree trace
+tree_trace = readTreeTrace("Saturnia.trees", burnin=0.25)
+
+# Generate the majority-rule consensus tree
+map_tree = consensusTree(trace=tree_trace, cutoff=0.5, file="consensustree.nex")
+

@@ -62,15 +62,16 @@ It is easiest if you make a new folder for this analysis, and transfer it onto t
 
 As a third analysis, you will run Bayesian tree inference with [RevBayes](https://revbayes.github.io/tutorials/intro/getting_started.html). 
 
-1. Using a text editor, prepare a slurm script that will run RevBayes. This analysis will require a revbayes script that specifies the parameters for the analysis -- instead of passing them directly with flags such as with IQ-Tree. The revbayes script is provided in the Homework 1 files folder on the cluster, open it and read through it. It instructs revbayes to perform two separate MCMC runs. Make a copy of the slurm script you used for IQ-Tree and modify it to load the RevBayes module on the cluster and start RevBayes with lines like:
+1. Using a text editor, prepare a slurm script that will run RevBayes. Because a Bayesian analysis requires more resources, we want to assign those in the slurm script. Make a copy of the script you used for the IQ-Tree analysis, change the job-name, set the tasks-per-node to 8 and the --mem to 40G. This will allow the analysis to finish in approximately 14 hours. In the execution part of your slurm script, change the lines to:
 
 ```
 module load bio/RevBayes/1.0.11-intel-2018.5.274-mpi
 rb-mpi <myrevbayesscript.rev>
 ```
 
-Make sure all the input files (slurm script, alignment file and revbayes script) are in the same folder as where you start the run.
+
+2. Revbayes requires a script that specifies the parameters for the analysis, instead of passing them directly with flags such as with IQ-Tree. A revbayes script to run a Bayesian analysis with two MCMC chains and a GTR+G+I model, and generate a majority-rule consensus tree, is provided in the Homework 1 files folder on the cluster, open it and read through the steps. Move the folder with all the prepared input files to ```lus_scratch``` folder on the cluster, then SSH into the cluster and start the run. Make sure all the input files (slurm script, alignment file and revbayes script) are in the same folder as where you start the run.
 
 
-2. After the run finishes, copy the files over to your local computer and load (drag and drop) the ```.log``` files into Tracer. Verify if the separate runs converged on the same optimum, and if they ran for enough generations (ESS values >>200). For further information on what to look for, see [this tutorial](https://beast.community/tracer_convergence). Include relevant graphs in your report.
+2. After the run finishes, copy the files over to your local computer and load the ```.log``` files into Tracer. Verify if the separate runs converged on the same optimum, and if they ran for enough generations (ESS values >>200). For further information on what to look for, see [this tutorial](https://beast.community/tracer_convergence). Include the tree and relevant Tracer graphs in your report.
 
