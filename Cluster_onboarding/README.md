@@ -48,6 +48,7 @@ https://scinet.usda.gov/training/free-online-training
 
 # In class excersise 
 
+## CLI basics
 Log in to the cluster
 
 go to the class_peps662 folder
@@ -62,3 +63,44 @@ view them in a text editor
 
 
 
+## slurm example
+
+Go to folder examples/slurm/non_mpi in home directory
+
+```
+#!/bin/bash
+#SBATCH --job-name=example
+#SBATCH --partition=sandbox
+## 3 day max run time for public partitions, except 4 hour max runtime for the sandbox partition
+#SBATCH --time=0-01:00:00 ## time format is DD-HH:MM:SS
+## task-per-node x cpus-per-task should not typically exceed core count on an individual node
+#SBATCH --nodes=1
+#SBATCH --tasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=6400 ## max amount of memory per node you require
+##SBATCH --core-spec=0 ## Uncomment to allow jobs to request all cores on a node    
+#SBATCH --error=hello-%A.err ## %A - filled with jobid
+#SBATCH --output=hello-%A.out ## %A - filled with jobid
+## Useful for remote notification
+##SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,TIME_LIMIT_80
+##SBATCH --mail-user=user@test.org
+## All options and environment variables found on schedMD site: http://slurm.schedmd.com/sbatch.html
+source ~/.bash_profile
+./build.sh
+./hello ${RANDOM}
+```
+
+To run you will need to execute this command
+
+```
+sbatch non_mpi.slurm
+```
+
+This will execute programs ``` biuild.sh and hello ```
+
+to see what these programs do 
+
+``` 
+cat build.sh
+cat hello.c
+```
