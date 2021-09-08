@@ -46,7 +46,7 @@ https://bioinformaticsworkbook.org/Appendix/Unix/unix-basics-1.html#gsc.tab=0
 https://scinet.usda.gov/training/free-online-training
 
 
-# Inclass excersise 
+# In class excersise 
 
 Log in to the cluster
 
