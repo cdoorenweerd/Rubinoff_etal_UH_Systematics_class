@@ -50,9 +50,13 @@ Log in to the cluster
 
 go to the class_peps662 folder
 
-copy all the files to the lustre folder
+copy all the files in File_formats folder to the lustre folder
 
 view all the files to see differences between file formats
+
+copy all the files to you local computer
+
+view them in a text editor
 
 
 
