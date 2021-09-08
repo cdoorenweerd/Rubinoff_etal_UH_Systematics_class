@@ -1,5 +1,7 @@
 # Cluster Onboarding
 
+## MANA cluster information https://datascience.hawaii.edu/hpc/
+
 ## Latest HPC-101 (Onboarding) slides: http://go.hawaii.edu/wL
 
 There are two ways to access the MANA cluster
