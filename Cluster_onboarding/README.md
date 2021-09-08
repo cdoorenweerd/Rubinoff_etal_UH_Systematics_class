@@ -41,7 +41,7 @@ rm = command to delete a file or directory
 https://bioinformaticsworkbook.org/Appendix/Unix/unix-basics-1.html#gsc.tab=0
 
 ## Free online computational training
-https://scinet.usda.gov/training/free-online-training#python-programming
+https://scinet.usda.gov/training/free-online-training
 
 
 # Inclass excersise 
