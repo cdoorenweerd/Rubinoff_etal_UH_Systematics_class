@@ -1,12 +1,12 @@
 # Homework assignment 2: molecular dating
 
-For this homework assignment we will use a Hawaiian silversword alliance dataset that is also used in the [Landis et al. RevBayes tutorial](https://revbayes.github.io/tutorials/biogeo/biogeo_dating.html). However, instead of using a Bayesian molecular dating approach, you will use two maximum likelihood approaches and compare the results between those and the Bayesian approach.
+For this homework assignment you will use a Hawaiian silversword alliance dataset that is also used in the [Landis et al. RevBayes tutorial](https://revbayes.github.io/tutorials/biogeo/biogeo_dating.html). However, instead of using a Bayesian molecular dating approach, you will use two maximum likelihood approaches and compare the results between those and the Bayesian approach.
 
 
 ## Homework assignment 2 REPORT must include:
 - Title, author, date
 - An introduction section explaining the overlap and/or differences between least square dating (LSD) and Bayesian probabalistic dating
-- A methods section explaining the command parameters and why they are appropriate
+- A methods section explaining the analyses parameters you used and why they are appropriate
 - A results and discussion section describing the results; are the trees different between your IQ-Tree results and those in the RevBayes tutorial? What could cause those differences? (Hint: look at the alignment; what type of gene was used, and think about how gaps are treated between likelihood and Bayesian tree inference methods). Are your dating results the same between both dating approaches, and the same as the RevBayes tutorial results? If not, how are they different? Would this lead to different conclusions? Are these results reliable? Can you identify any weaknesses?
 - Figures of the resulting trees from your analyses and a screenshot of your calibrations.txt file
 
@@ -14,7 +14,7 @@ The report must not exceed two (2) pages with 11pt font or larger, excluding fig
 
 ## 1. Infer a ML tree with IQ-Tree
 
-1. We will infer a ML tree with IQ-Tree, as we have done for homework assignment 1. The input alignment file is available in the Homework2 folder on the Mana cluster, called ```silversword.mol.nex```. Prepare a folder with a slurm script that will instruct IQ-Tree to infer a maximum likelihood tree. Your IQ-Tree command can look like:
+1. Infer a ML tree with IQ-Tree, as you have done for homework assignment 1. The input alignment file is available in the Homework2 folder on the Mana cluster, called ```silversword.mol.nex```. Prepare a folder with a slurm script that will instruct IQ-Tree to infer a maximum likelihood tree. Your IQ-Tree command can look like:
 
 ```
 iqtree -s silversword.mol.nex -runs 10 -bb 1000 -nt AUTO
