@@ -59,7 +59,7 @@ Dubautia_sherffiana,Dubautia_herbstobatae 0:-3.7
 
 Where the first line specifies the ingroup root age, and the second line sets the age of a clade to a maximum of 3.7 Ma, to reflect the age of Oahu. Add calibrations for the following taxa:
 
-The clade with <i>Dubautia_ciliolata_subsp._glutinosa</i> + <i>Dubautia_ciliolata_subsp._ciliolata</i> + <i>Dubautia_arborea</i> and <i>Dubautia_linearis_subsp._hillebrandii</i> is endemic to Hawaii. The clade with <i>Dubautia_platyphylla</i> + <i>Dubautia_menziesii</i> and <i>Dubautia_reticulata</i> is endemic to Maui. The mrca of the clade that includes <i>Dubautia_knudsenii_subsp._knudsenii</i> + <i>Dubautia_laevigata</i> is endemic to Kauai. <i>Dubautia_plantaginea_subps._plantaginea</i> and <i>Dubautia_plantaginea_subsp._magnifolia</i> are endemic to Maui. You can use this map as a reference for the island ages:
+The clade with <i>Dubautia_ciliolata_subsp._glutinosa</i> + <i>Dubautia_ciliolata_subsp._ciliolata</i> + <i>Dubautia_arborea</i> and <i>Dubautia_linearis_subsp._hillebrandii</i> is endemic to Hawaii. The clade with <i>Dubautia_platyphylla</i> + <i>Dubautia_menziesii</i> and <i>Dubautia_reticulata</i> is endemic to Maui. The mrca of the clade that includes <i>Dubautia_knudsenii_subsp._knudsenii</i> + <i>Dubautia_laevigata</i> is endemic to Kauai. <i>Dubautia_plantaginea_subps._plantaginea</i> and <i>Dubautia_plantaginea_subsp._magnifolia</i> are endemic to Maui. You can open the alignment in a text editor to reference the exact name of the taxon. You can use this map as a reference for the island ages:
 
 ![Hawaii island ages from Mueller-Dombois & Fosberg 1998](Hawaiiages.png)
 
