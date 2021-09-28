@@ -7,20 +7,20 @@ For this homework assignment you will use a Hawaiian silversword alliance datase
 - Title, author, date
 - An introduction section explaining the overlap and/or differences between least square dating (LSD) and Bayesian probabalistic dating
 - A methods section explaining the analyses parameters you used and why they are appropriate
-- A results and discussion section describing the results; are the trees different between your IQ-Tree results and those in the RevBayes tutorial? What could cause those differences? (Hint: look at the alignment; what type of gene was used, and think about how gaps are treated between likelihood and Bayesian tree inference methods). Are your dating results the same between both dating approaches, and the same as the RevBayes tutorial results? If not, how are they different? Would this lead to different conclusions? Are these results reliable? Can you identify any weaknesses?
-- Figures of the resulting trees from your analyses and a screenshot of your calibrations.txt file
+- A results and discussion section describing the results; are the trees different between your IQ-Tree results and those in the RevBayes tutorial? What could cause those differences? (Hint: look at the alignment; what type of gene was used, and think about how gaps are treated between likelihood and Bayesian tree inference methods). Are your dating results the same between both dating approaches, and the same as the RevBayes tutorial results? If not, how are they different? Would this lead to different conclusions? Are these results reliable? Can you identify any weaknesses in the models?
+- Numbered figures of the resulting trees from your analyses, referenced in the text, and a screenshot of your calibrations.txt file
 
 The report must not exceed two (2) pages with 11pt font or larger, excluding figures. Deadline to turn in is indicated in the syllabus.
 
 ## 1. Infer a ML tree with IQ-Tree
 
-1. Infer a ML tree with IQ-Tree, as you have done for homework assignment 1. The input alignment file is available in the Homework2 folder on the Mana cluster, called ```silversword.mol.nex```. Prepare a folder with a slurm script that will instruct IQ-Tree to infer a maximum likelihood tree. Your IQ-Tree command can look like:
+1. Infer a ML tree with IQ-Tree, as you have done for homework assignment 1. The input alignment file is available in the Homework2 folder on the Mana cluster, called ```silversword.mol.nex```. Prepare a folder with a slurm script (modify from Homework1) that will instruct IQ-Tree to infer a maximum likelihood tree. Your IQ-Tree command can look like:
 
 ```
 iqtree -s silversword.mol.nex -runs 10 -bb 1000 -nt AUTO
 ```
 
-2. After the analysis finishes, transfer the resulting files back to your local computer. Include relevant details from the log file (e.g., the selected substitution model) to your report.
+2. After this tree inference analysis finishes, transfer the resulting files back to your local computer. Include relevant details from the log file (e.g., the selected substitution model) to your report.
 
 ## 2. Create two trees
 
@@ -34,7 +34,7 @@ Members of the silversword alliance are only known from Kauai, Oahu, Maui nui an
 iqtree -s YOURALN_FILE -te YOURTREE_FILE --date-root -5.1 --date-tip 0 --date-ci 100
 ```
 
-Use the IQ-Tree command reference to explain these parameters in your homework report. Transfer the folder with the input files to the Mana cluster and add the run to the queue. After it finishes, transfer all files back to your local computer and examine the resulting tree in FigTree, and create a tree figure for the report that includes confidence interval bars, node ages (text) and a labeled x-axis that reflects time.
+Use the IQ-Tree command reference to explain these parameters in your homework report. Transfer the folder with the input files to the Mana cluster and add the run to the queue. After it finishes, transfer all files back to your local computer and examine the resulting tree in FigTree, and create a tree figure for the report that includes confidence interval node bars, node ages (text) and a labeled x-axis that reflects time.
 
 
 ## 4. Date the tree with IQ-Tree Least Square Dating using mrca clade calibration.
@@ -69,4 +69,4 @@ Prepare a slurm script that will run IQ-Tree Least Square Dating with this calib
 iqtree -s ALN_FILE --date calibrations.txt -te TREE_FILE --date-tip 0 --date-ci 100
 ```
 
-Transfer the folder with these input files to the Mana cluster and add your run to the queue. After it finished, transfer the files back to your local computer and use FigTree to make a tree figure with confidence interval bars, node ages (text) and a labeled x-axis that reflects time.
+Transfer the folder with these input files to the Mana cluster and add your run to the queue. After it finished, transfer the files back to your local computer and use FigTree to make a tree figure with confidence interval node bars, node ages (text) and a labeled x-axis that reflects time.
