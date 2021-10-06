@@ -5,7 +5,9 @@ For this homework assignment we will use a Hawaiian silversword alliance dataset
 
 ## Homework assignment 2 REPORT:
 
-Use a scientific writing style. The homework report will follow the template of a short research publication: be brief and specific! Re-read your sentences to look for optimization. The report must not exceed two (2) pages with 11pt font or larger, EXCLUDING figures. Append figures after the text. Deadline to turn in is indicated in the syllabus. START EARLY with the analyses to allow time for troubleshooting, and sufficient time to ultimately write the report.
+Use a scientific writing style, the homework report will follow the template of a short research publication. Some quick tips to enhance your scientific writing: https://www.scitechedit.com/en-gb/helpful-resources/newsletters/502-improve-your-scientific-writing .
+
+The report must not exceed two (2) pages with 11pt font or larger, EXCLUDING figures. Append figures after the text. Deadline to turn in is indicated in the syllabus. START EARLY with the analyses to allow time for troubleshooting, and sufficient time to ultimately write the report.
 
 - Title, author, date
 - An introduction section explaining the overlap and/or differences between a maximum likelihood approach to molecular dating and a Bayesian approach (Hint: which one is/can be more elaborate?)
