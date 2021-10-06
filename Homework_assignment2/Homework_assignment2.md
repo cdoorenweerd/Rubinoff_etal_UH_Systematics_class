@@ -1,16 +1,19 @@
 # Homework assignment 2: molecular dating
 
-For this homework assignment you will use a Hawaiian silversword alliance dataset that is also used in the [Landis et al. RevBayes tutorial](https://revbayes.github.io/tutorials/biogeo/biogeo_dating.html). However, instead of using a Bayesian molecular dating approach, you will use two maximum likelihood approaches and compare the results between those and the Bayesian approach.
+For this homework assignment we will use a Hawaiian silversword alliance dataset that is also used in a [Landis et al. RevBayes tutorial](https://revbayes.github.io/tutorials/biogeo/biogeo_epoch.html). However, instead of using a Bayesian molecular dating approach, we will use two maximum likelihood approaches and compare the results between those and the Bayesian approach of Landis et al.
 
 
-## Homework assignment 2 REPORT must include:
+## Homework assignment 2 REPORT:
+
+Use a scientific writing style. The homework report will follow the template of a short research publication: be brief and specific! Re-read your sentences to look for optimization. The report must not exceed two (2) pages with 11pt font or larger, EXCLUDING figures. Append figures after the text. Deadline to turn in is indicated in the syllabus. START EARLY with the analyses to allow time for troubleshooting, and sufficient time to ultimately write the report.
+
 - Title, author, date
-- An introduction section explaining the overlap and/or differences between least square dating (LSD) and Bayesian probabalistic dating
-- A methods section explaining the analyses parameters you used and why they are appropriate
-- A results and discussion section describing the results; are the trees different between your IQ-Tree results and those in the RevBayes tutorial? What could cause those differences? (Hint: look at the alignment; what type of gene was used, and think about how gaps are treated between likelihood and Bayesian tree inference methods). Are your dating results the same between both dating approaches, and the same as the RevBayes tutorial results? If not, how are they different? Would this lead to different conclusions? Are these results reliable? Can you identify any weaknesses in the models?
+- An introduction section explaining the overlap and/or differences between a maximum likelihood approach to molecular dating and a Bayesian approach (Hint: which one is/can be more elaborate?)
+- A methods section explaining the analyses parameters you used and why they are appropriate. Use the format of: "I ran analysis X to Y", e.g., "I ran a bootstrap analysis for 20,000 generations to calculate branch support". Mention the versions of the software you used (hint: look for these in the log files).
+- A results and discussion section. Present the different trees that resulted from the analyses as human-readable figures. Are the trees different (are the same groups supported as monophyletic?) between your IQ-Tree results, and those in the RevBayes tutorial? What could cause those differences? (Hint: look at the alignment; what type of gene was used, and think about how gaps are treated between likelihood and Bayesian tree inference methods). Are your dating results the same between both dating approaches, and the same as the RevBayes tutorial results? If not, how are they different? Would this lead to different conclusions? Are these results reliable? Can you identify any weaknesses in the models?
 - Numbered figures of the resulting trees from your analyses, referenced in the text, and a screenshot of your calibrations.txt file
 
-The report must not exceed two (2) pages with 11pt font or larger, excluding figures. Deadline to turn in is indicated in the syllabus.
+
 
 ## 1. Infer a ML tree with IQ-Tree
 
@@ -63,7 +66,7 @@ The clade with <i>Dubautia_ciliolata_subsp._glutinosa</i> + <i>Dubautia_ciliolat
 
 ![Hawaii island ages from Mueller-Dombois & Fosberg 1998](Hawaiiages.png)
 
-Prepare a slurm script that will run IQ-Tree Least Square Dating with this calibrations.txt file:
+Prepare a slurm script that will run IQ-Tree Least Square Dating with your calibrations.txt file:
 
 ```
 iqtree -s ALN_FILE --date calibrations.txt -te TREE_FILE --date-tip 0 --date-ci 100
