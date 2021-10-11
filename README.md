@@ -1,3 +1,11 @@
+# File extensions
+
+To ensure you know what file type you have and to prevent issues with matching the file names as they appear on your local system and the cluster, it is best to have your operating set to show all file extensions.
+
+- [Mac OS](https://support.apple.com/guide/mac-help/show-or-hide-filename-extensions-on-mac-mchlp2304/mac)
+
+- [Windows](https://fileinfo.com/help/windows_10_show_file_extensions)
+
 # Software that will be used during the course
 
 ## Install on your computer locally:
