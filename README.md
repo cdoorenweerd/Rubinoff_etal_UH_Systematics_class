@@ -1,6 +1,6 @@
 # File extensions
 
-To ensure you know what file type you have and to prevent issues with matching the file names as they appear on your local system and the cluster, it is best to have your operating set to show all file extensions.
+To ensure you know what file type you have and to prevent issues with matching the file names as they appear on your local system and the cluster, it is best to have your operating system set to show all file extensions. Instructions on how to do this:
 
 - [Mac OS](https://support.apple.com/guide/mac-help/show-or-hide-filename-extensions-on-mac-mchlp2304/mac)
 
