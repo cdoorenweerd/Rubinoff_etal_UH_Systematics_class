@@ -13,31 +13,21 @@ Web Browser https://uhhpc.its.hawaii.edu/pun/sys/dashboard
 
 ## Command line interface (CLI) vs Graphical User Interface (GUI)
 
-In CLI you type commands to instruct the computer what to do. 
+In command line interface (CLI) you type commands to instruct the computer what to do. If you are completely new to this, try this introductory video: https://www.youtube.com/watch?v=5XgBd6rjuDQ&t=228s
 
-In GUI you click buttons to instruct the computer what to do. 
-
-CLI is much easier for the programer so most analysis programs will be programed this way.
+In a GUI (graphical user interface) you click buttons to instruct the computer what to do. CLI saves programmers from having to create a graphical interface, so it is much easier for the programmer and most data science programs will be programmed this way.
 
 ## Basic Linux Commands 
 
-nano/vim = edit contents of a file
-
-pwd = command to find out the path of the current working directory
-
-cd = command to change directory 
-
-ls = command to list contents of a directory
-
-cat = command to concatenate two file together (can also be used to view contents of a file)
-
-cp = command to copy a file
-
-mv = command to move a file (can be used to rename file)
-
-mkdir = command to make a directory
-
-rm = command to delete a file or directory
+- `nano`/`vim` = a command line text editor to change the contents of a file
+- `pwd` = command to find out the path of the current working directory
+- `cd` = command to change directory 
+- `ls` = command to list contents of a directory
+- `cat` = command to concatenate two file together (can also be used to view contents of a file)
+- `cp` = command to copy a file
+- `mv` = command to move a file (can be used to rename file)
+- `mkdir` = command to make a directory
+- `rm` = command to delete a file or directory
 
 ## Introduction to Unix
 https://bioinformaticsworkbook.org/Appendix/Unix/unix-basics-1.html#gsc.tab=0
