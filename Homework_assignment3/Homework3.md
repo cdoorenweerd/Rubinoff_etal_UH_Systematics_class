@@ -29,27 +29,29 @@ For this homework, we are going to reanalyze some of the data from Scornavacca, 
 iqtree -s mammal.fasta -p mammal_part.txt --prefix Mammal_concat -bb 1000 -m MFP -nt AUTO
 ```
 
-3. From the output of this analysis, open the ```Mammal_concat.treefile``` in ```figtree```
+3. From the output of this analysis, open the ```Mammal_concat.treefile``` in ```figtree``` to see the best infered tree. 
 
 
 ## 2. ML gene tree analyses (IQTREE)
 
-To compare mammal MSC tree to the mammal concatenated tree tree we just inferred. We must first infer gene trees from each partition. To do this we must first
+To infer a mammal MSC tree, we must first infer gene trees from each partition. To do this we must first.
 
-1. Make a new slurm script to run gene tree analyses
+1. Make a new slurm script to run a gene tree analyses
 
-2. Use this command which uses the -S flag to run separate gene tree analyses instead of running a concatenated analysis
+2. Use this command which uses the -S flag to run separate gene tree analyses for all the genes in the dataset instead of running a concatenated analysis
 ```
 iqtree -s mammal.fasta -p mammal_part.txt --prefix Mammal_loci -m MFP -nt AUTO
 ```
 
-3. From the output of this analysis, the ```Mammal_loci.treefile``` should contain 110 gene trees which we will use as input in the MSC analaysis in ASTRAL. View this in ```figtree``` to see if it worked.
+3. From the output of this analysis, the ```Mammal_loci.treefile``` should contain 110 gene trees which we will use as input in the MSC analaysis in ASTRAL. View this in ```figtree``` to see if it worked. You should have 110 gene trees in this file. 
 
 ## 3. ML species tree analysis (ASTRAL) 
 
-1. Astral is not loaded in the cluster so you must download it and install. 
+To infer a mammal MSC tree, we will be using the program Astral. (https://github.com/smirarab/ASTRAL)
 
-2. To download and install software you must first start an interactive session on the cluster by logging in to a compute node using this command
+1. Astral is not loaded in the cluster so you must download and install it. 
+
+2. To download and install software on the cluster you must first start an interactive session by logging in to a compute node using this command.
 
 ```
 srun -I30 -p sandbox -N 1 -c 1 --mem=6G -t 0-01:00:00 --pty /bin/bash
@@ -66,7 +68,7 @@ to
 ```
 where the ```username``` should be your UH username/email. 
 
-This change indicates you went from a login node ```login002``` to a compute node ```node-0005```
+This change indicates you went from the login node ```login002``` to a compute node ```node-0005```
 
 When installing software to a cluster, it is best to download all software and install them in the same place. This is usually a folder in your home directory 
 
@@ -92,7 +94,7 @@ mkdir apps
 cd apps
 ```
 
-Once in the apps folder, use the git clone command to download ASTRAL to the culster
+Once in the apps folder, use the git clone command to download ASTRAL to this folder
 
 ```
 git clone https://github.com/smirarab/ASTRAL.git
@@ -110,17 +112,19 @@ module load lang/Java/1.8.0_241
 sh make.sh
 ```
 
-Once it is finished astral is installed and there should be a file called ```astral.5.7.7.jar``` which is the installed java program.   
+Once it is finished installing astral, there should be a file called ```astral.5.7.7.jar``` which is the installed java program.   
 
 Now we can run astral to make a MSC tree.
 
-go back to the folder containing your output files from iqtree.
+Go back to the folder containing your output files from iqtree.
 
 To run Astral you must run this command using the Mammal gene trees as input and outputting ad species tree.
 
 ```
-java -jar ~/Apps/ASTRAL/astral.5.7.7.jar -i Mammal_loci.treefile -o Astral_mammal.tre
+java -jar ~/apps/ASTRAL/astral.5.7.7.jar -i Mammal_loci.treefile -o Astral_mammal.tre
 ```
+
+This command calls java to look for astral in ```~/apps/ASTRAL/astral.5.7.7.jar``` then uses ```Mammal_loci.treefile``` as input and outputs a species tree file as ```Astral_mammal.tree```. This tree has support values which are not bootstrap values but local posterior probabilities.
 
 ## 4. Gene and Site Concordance Factors
 
@@ -132,9 +136,12 @@ You will need to run this analyis twice to calculate gene and site concordance f
 
 ```
 #Concatenated tree gCF and sCF calculations
-iqtree -t  Mammal_concat.treefile --gcf loci.treefile -s <your alignment file> --scf 100 --prefix concord -T 1
+iqtree -t  Mammal_concat.treefile --gcf loci.treefile -s <your alignment file> --scf 100 --prefix Concat_concord -T 1
 
 #MSC tree gCF and sCF calculations
-iqtree -t  Astral_mammal.tre --gcf loci.treefile -s <your alignment file> --scf 100 --prefix concord -T 1
+iqtree -t  Astral_mammal.tre --gcf loci.treefile -s <your alignment file> --scf 100 --prefix Species_concord -T 1
 ```
+
+This analyses will out put another tree file that will add the gCF and sCF values to your concatenated and Species tree. 
+
 
