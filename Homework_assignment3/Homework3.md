@@ -11,13 +11,13 @@ For this homework assignment you will run 4 analyses:
 
 - Title, author, date
 - An introduction section explaining how the two analyses methods used in the assignment differ from each other
-- A methods section explaining ...
+- A methods section explaining the analyses and setting used for this assignment.
 - A results and discussion section describing the results
 - Figures of the resulting trees and other figures that are relevant to the results, numbered in order as they appear in the text.
 
 The report must not exceed two (2) pages with 11pt font or larger, excluding figures. Deadline to turn in is indicated in the syllabus.
 
-For this homework, we are going to reanalyze some of the data from Scornavacca, C. and Galtier, N. 2017. Incomplete Lineage Sorting in Mammalian Phylogenomics. In this paper they compared supertree methods to MSC methods. supertree methods have fallen out of favor recently so for this homework, we will infer a concatenated tree and a species tree from this data and see if there are any differences. Discuss why there are differences between the two methods and lastly which tree is the "Correct Tree". 
+For this homework, we are going to reanalyze some of the data from Scornavacca, C. and Galtier, N. 2017. Incomplete Lineage Sorting in Mammalian Phylogenomics. In this paper they compared supertree methods to MSC methods. Supertree methods have fallen out of favor recently so for this homework, we will infer a concatenated tree and a species tree from this data and see if there are any differences. Discuss why there are differences between the two methods and lastly which tree is the "Correct Tree". 
 
 ## 1. ML Concatenated analysis of the mammal tree of life (IQTREE)
 
