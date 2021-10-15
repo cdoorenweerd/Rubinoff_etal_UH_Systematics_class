@@ -21,26 +21,31 @@ For this homework, we are going to reanalyze some of the data from Scornavacca, 
 
 ## 1. ML Concatenated analysis of the mammal tree of life (IQTREE)
 
-1. Download the input files from the Homework 3 folder on cluster. there should be only one alignment ```mammal.fasta``` and a partition file ```mammal_part.txt``` to identify the 110 mammal genes. 
+1. Download the files from the Homework 3 folder on cluster. There will be one alignment ```mammal.fasta``` and a partition file ```mammal_part.txt``` to identify the 110 mammal genes. We have included slurm scripts which you can use to run each analysis for this home work assignement. 
 
-2. Make a new slurm script to run a concatenated analysis on the mammal dataset. Use IQTREE to find the appropriate model for each gene (-m MPF) and generate support values using 1000 ultrafast bootstraps (-bb 1000). We use the --prefix flag to differenciate the different analyses from each other
+2. Run slurm script ```Concatenated_analysis.slurm```
+
+This script uses this command to run a concatenated analyses in IQTREE which tests for the best evolutionary model for each partition and calculates the most likely concatenated phylogenetic tree. It also calculates 1000 ultrafast bootstrap support values.
 
 ```
 iqtree -s mammal.fasta -p mammal_part.txt --prefix Mammal_concat -bb 1000 -m MFP -nt AUTO
 ```
 
-3. From the output of this analysis, open the ```Mammal_concat.treefile``` in ```figtree``` to see the best infered tree. 
+3. From the output of this analysis, open the ```Mammal_concat.treefile``` in ```figtree``` to see the best ML tree. 
 
 
 ## 2. ML gene tree analyses (IQTREE)
 
 To infer a mammal MSC tree, we must first infer gene trees from each partition. To do this we must first.
 
-1. Make a new slurm script to run a gene tree analyses
+1. Run slurm script ```Gene_tree_analysis.slurm```
 
-2. Use this command which uses the -S flag to run separate gene tree analyses for all the genes in the dataset instead of running a concatenated analysis
+This script uses this command below to run separate gene tree analyses for all the genes in the dataset instead of running a concatenated analysis
+
+The ```-S``` flag signals the program to run separate gene tree analsyes.
+
 ```
-iqtree -s mammal.fasta -p mammal_part.txt --prefix Mammal_loci -m MFP -nt AUTO
+iqtree -s mammal.fasta -S mammal_part.txt --prefix Mammal_loci -m MFP -nt AUTO
 ```
 
 3. From the output of this analysis, the ```Mammal_loci.treefile``` should contain 110 gene trees which we will use as input in the MSC analaysis in ASTRAL. View this in ```figtree``` to see if it worked. You should have 110 gene trees in this file. 
@@ -49,99 +54,39 @@ iqtree -s mammal.fasta -p mammal_part.txt --prefix Mammal_loci -m MFP -nt AUTO
 
 To infer a mammal MSC tree, we will be using the program Astral. (https://github.com/smirarab/ASTRAL)
 
-1. Astral is not loaded in the cluster so you must download and install it. 
+1. Astral is not loaded as a module in the cluster so we have included it in the homework 3 folder. The the folder ```ASTRAL``` contains the java program file is called ```astral.5.7.7.jar``` and with this we should be able to run it from directly the homework folder. 
 
-2. To download and install software on the cluster you must first start an interactive session by logging in to a compute node using this command.
+2. Run slurm script ```Species_tree_analysis.slurm```
 
-```
-srun -I30 -p sandbox -N 1 -c 1 --mem=6G -t 0-01:00:00 --pty /bin/bash
-```
-
-once logged in the the command prompt will go from
+This script uses this command below to run a Multispecies coalecsent analyses which uses ```Mammal_loci.treefile``` as input and outputs a species tree file as ```Astral_mammal.tre```. This tree has support values which are not bootstrap values but local posterior probabilities.
 
 ```
-[username@login002 ~]$
-```
-to
-```
-[username@node-0005 ~]$
-```
-where the ```username``` should be your UH username/email. 
-
-This change indicates you went from the login node ```login002``` to a compute node ```node-0005```
-
-When installing software to a cluster, it is best to download all software and install them in the same place. This is usually a folder in your home directory 
-
-To know you are in your home directory you can look at the command prompt and if it has a ```~```  or looks like this 
-
-```
-[username@node-0005 ~]$
-``` 
-
-You can also use the ```cd``` command by itself and it should always send you back to your home directory.
-
-```
-cd
+java -jar java -jar ~/peps662_group/Homework3/ASTRAL/astral.5.7.7.jar -i Mammal_loci.treefile -o Astral_mammal.tre
 ```
 
-In the UH-MANA cluster, when you use ```pwd``` command from the home directory the output should be ```/home/username```
-
-Once you are in the home directory make a new folder using the ```mkdir``` command then go to this folder
-
-```
-mkdir apps
-
-cd apps
-```
-
-Once in the apps folder, use the git clone command to download ASTRAL to this folder
-
-```
-git clone https://github.com/smirarab/ASTRAL.git
-```
-This command can only be used in an interactive session on a compute node. It will download all the latest files from the ASTRAL github page. (https://github.com/smirarab/ASTRAL)
-
-
-Once downloaded go into the ASTRAL folder and load java and install the program using ```sh make.sh``` command.
-
-You will also have to load the java module for this to work.
-
-```
-cd ASTRAL/
-module load lang/Java/1.8.0_241
-sh make.sh
-```
-
-Once it is finished installing astral, there should be a file called ```astral.5.7.7.jar``` which is the installed java program.   
-
-Now we can run astral to make a MSC tree.
-
-Go back to the folder containing your output files from iqtree.
-
-To run Astral you must run this command using the Mammal gene trees as input and outputting ad species tree.
-
-```
-java -jar ~/apps/ASTRAL/astral.5.7.7.jar -i Mammal_loci.treefile -o Astral_mammal.tre
-```
-
-This command calls java to look for astral in ```~/apps/ASTRAL/astral.5.7.7.jar``` then uses ```Mammal_loci.treefile``` as input and outputs a species tree file as ```Astral_mammal.tree```. This tree has support values which are not bootstrap values but local posterior probabilities.
+Open the file ```Astral_mammal.tre``` in figtree to see the results. 
 
 ## 4. Gene and Site Concordance Factors
 
-Gene and Site Concordance factors are a way to quantifying genealogical concordance in phylogenomic datasets. For every branch of a reference tree, gene concordance factor (gCF) is defined as the percentage of “decisive” gene trees containing that branch. While site concordance factor (sCF) is defined as the percentage of decisive alignment sites supporting a branch in the reference tree. 
+1. Gene and Site Concordance factors are a way to quantifying genealogical concordance in phylogenomic datasets. For every branch of a reference tree, gene concordance factor (gCF) is defined as the percentage of “decisive” gene trees containing that branch. While site concordance factor (sCF) is defined as the percentage of decisive alignment sites supporting a branch in the reference tree. 
 
 To learn more about this http://www.robertlanfear.com/blog/files/concordance_factors.html
 
-You will need to run this analyis twice to calculate gene and site concordance factors for both the concatenated from iqtree and species tree from astral
+2. Run slurm script ```GCF_SCF_script.slurm```
+
+This script uses the commands below to calculate the GCF and SCF for both concatenated tree and the species trees. 
 
 ```
 #Concatenated tree gCF and sCF calculations
-iqtree -t  Mammal_concat.treefile --gcf loci.treefile -s <your alignment file> --scf 100 --prefix Concat_concord -T 1
+iqtree -t  Mammal_concat.treefile --gcf loci.treefile -s mammal.fasta --scf 100 --prefix Concat_concord -T 1
 
 #MSC tree gCF and sCF calculations
-iqtree -t  Astral_mammal.tre --gcf loci.treefile -s <your alignment file> --scf 100 --prefix Species_concord -T 1
+iqtree -t  Astral_mammal.tre --gcf loci.treefile -s mammal.fasta --scf 100 --prefix Species_concord -T 1
 ```
 
-This analyses will out put another tree file that will add the gCF and sCF values to your concatenated and Species tree. 
+This analyses will output another tree file that will add the gCF and sCF values to your concatenated and Species tree. So instead of a single value for your branch support you will have 3 values separated by forwad slashes "/". the different number correspond to the differen analyses where ultrafast boostrap/ gene concordance factors/ site concordance factors. 
+
+open the files ```Species_concord.treefile``` and ```Concat_concord.treefile``` in figtree to see results.
+
 
 
