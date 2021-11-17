@@ -5,8 +5,7 @@
 #Load packages
 library(phytools)
 library(geiger)
-library(diversitree)
-library(stats)
+library(phangorn)
 
 #set working directory
 setwd("Dropbox/My Mac (Michael’s MacBook Pro)/Documents/GitHub/2019_fall_UH_Systematics_class/Homework_assignment4/")
@@ -27,7 +26,7 @@ par(resetPar())
 anole.tree<-read.tree("Anolis.tre") 
 
 #plot tree file
-plotTree(anole.tree,ftype="i",lwd=1)
+plotTree(anole.tree,ftype="i",lwd=1,fsize=.5)
 
 #read in continuous trait file (Body size)
 svl<-read.csv("svl.csv",row.names=1) 
@@ -52,13 +51,17 @@ obj
 plot(obj,legend=0.7*max(nodeHeights(anole.tree)), sig=2,fsize=c(0.7,0.9))
 
 #Fitting models of continuous character evolution
+#fit brownian motion model
 fitBM<-fitContinuous(anole.tree,svl,model="BM")
+#fit Ornstein–Uhlenbeck model
 fitOU<-fitContinuous(anole.tree,svl,model="OU")
+#fit early burst model
 fitEB<-fitContinuous(anole.tree,svl,model="EB")
 
 #Calculate AIC for different models
 aic.vals<-setNames(c(fitBM$opt$aicc,fitOU$opt$aicc,fitEB$opt$aicc),
                    c("BM","OU","EB"))
+#AIC closest to 0 is best
 aic.vals
 
 #calculate weights for different models
@@ -66,10 +69,11 @@ aic.w(aic.vals)
 
 
 
+
 ## Discrete trait evolution
 #read discrete character traits
 X<-read.csv("elopomorph.csv",row.names=1)
-feed.mode<-setNames(X[,1],rownames(X))
+feed.mode<-setNames(as.factor(X$feed_mode),rownames(X))
 #read eel tree
 eel.tree<-read.tree("elopomorph.tre")
 eel.tree
@@ -77,9 +81,17 @@ eel.tree
 chk<-name.check(eel.tree,feed.mode)
 chk
 
+#plot eel tree
+#plot tree file
+plotTree(eel.tree,ftype="i",lwd=1,fsize=.5)
+
 #Fitting models of discrete character evolution
+#fit equal rates model
 fitER<-ace(feed.mode,eel.tree,model="ER",type="discrete")
+#fit all rates different model
 fitARD<-ace(feed.mode,eel.tree,model="ARD",type="discrete")
+#fit symetrical model
+fitSYM<-ace(feed.mode,eel.tree,model="SYM",type="discrete")
 
 #Calculate AIC for different models
 aic.vals<-setNames(c(AIC(fitER,k=1),AIC(fitARD,k=2)),
@@ -89,10 +101,9 @@ aic.vals<-setNames(c(AIC(fitER,k=1),AIC(fitARD,k=2)),
 aic.w(aic.vals)
 
 #assign col for diferent states
-cols<-setNames(c("red","blue"),unique(factor(feed.mode)))
-plotTree(eel.tree,fsize=0.8,ftype="i")
-nodelabels(node=1:eel.tree$Nnode+Ntip(eel.tree),
-           pie=fitER$lik.anc,piecol=cols,cex=0.5)
-tiplabels(pie=to.matrix(feed.mode,sort(unique(feed.mode))),piecol=cols,cex=0.3)
-add.simmap.legend(colors=cols,prompt=FALSE,x=1,
-                  y=1,fsize=0.8,leg=unique(factor(feed.mode)))
+plotTree(eel.tree, fsize=0.7, ftype="i", lwd=1, cex=.5)
+cols<-setNames(c("red", "blue"), levels(feed.mode))
+nodelabels(pie=fitER$lik.anc, piecol=cols, cex=0.4)
+tiplabels(pie=to.matrix(feed.mode[eel.tree$tip.label], levels(feed.mode)), piecol =cols, cex=0.3)
+add.simmap.legend(leg = levels(feed.mode), colors=cols, prompt=FALSE, x = 1, y=1, fsize=0.8)
+
