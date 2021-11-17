@@ -2,6 +2,10 @@
 
 ## Character state reconstruction in R
 
+#Install packages if you have not done so previously
+install.packages('phytools')
+install.packages('geiger')
+
 #Load packages
 library(phytools)
 library(geiger)
@@ -24,11 +28,9 @@ svl<-setNames(svl$svl,rownames(svl))
 svl
 
 #check if tips and traits are the same
-chk<-name.check(anole.tree,svl)
-chk
+name.check(anole.tree,svl)
 
-
-#View tree with dots that represent species sizes
+#View tree with dots that represent species sizes (for fun)
 dotTree(anole.tree,svl,length=1,ftype="i",fsize=.5)
 
 #ML for ancestral state reconstruction
@@ -63,13 +65,13 @@ feed.mode<-setNames(X$feed_mode,rownames(X))
 eel.tree<-read.tree("elopomorph.tre")
 eel.tree
 
-chk<-name.check(eel.tree,feed.mode)
-chk
+#check if tips and traits are the same
+name.check(eel.tree,feed.mode)
+
 
 feed.mode<-as.factor(feed.mode)
 
 #plot eel tree
-#plot tree file
 plotTree(eel.tree,ftype="i",lwd=1,fsize=.5)
 
 #Fitting models of discrete character evolution

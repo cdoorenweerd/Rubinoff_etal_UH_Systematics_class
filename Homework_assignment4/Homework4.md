@@ -1,15 +1,15 @@
 # Homework assignment 4: Character State Evolution
 
-For this homework, we are going to conduct character state evolution based on two different datasets. The first is looking at how body size evolved in Anoles and the second is looking at how feeding strategy evoloved in eels. These methods are some of the first steps you would take after constructing trees to see if other characters in the study group evolved.
+For this homework, we are going to conduct character state evolution analyses based on two different datasets. The first is looking at how body size evolved in anole lizards and the second is looking at how feeding strategy evoloved in eels. These methods are some of the first steps you would take after constructing a tree to see how traits in the study group evolved.
 
 You will run two analyses and test different models of character state evolution:
 - Ancestral state reconstruction based on continuous characters
 - Fit different models and use AIC to determine which model best fit the data
 - Ancestral state reconstruction based on discrete characters
 - Fit different models and use AIC to determine which model best fit the data
--
 
-## Homework assignment 3 REPORT:
+
+## Homework assignment 4 REPORT:
 
 This assignment is worth 35 points!
 
@@ -28,21 +28,22 @@ The report must not exceed two (2) pages with 11pt font or larger, excluding fig
 
 ## 1. USING R or R studio
 
-1. All files needed to run analyses for this homework are in the peps homework4 folder or on the Github. You will need to move the contents of this folder your computer for to do this homework.
+1. All files needed to run analyses for this homework are in the `peps662_group/Homework4` folder on the mana cluster. You will need to copy the contents of this folder to your local computer.
 
-2. You can download the program R using the links below. I recommend using R studio since it has a bit more friendly user interface.
+2. You can download the program R using the links below. I recommend using R studio (on top of R) since it has a bit more friendly user interface.
 
 ```
 https://www.r-project.org/
 https://www.rstudio.com/
 ```
-3. I have a commented R script that we can use to conduct the homework.
+
+3. I have a commented R script that we can use to conduct the homework:
 
 ```
 character_state_evolution.R
 ```
 
-You will need the following file to conduct the homework assignement
+Check that you have the following files to conduct the homework assignment:
 
 ```
 Anolis.tre
@@ -50,6 +51,3 @@ svl.csv
 elopomorph.csv
 elopomorph.tre
 ```
-
-
-
