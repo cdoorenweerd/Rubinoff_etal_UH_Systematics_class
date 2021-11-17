@@ -58,13 +58,15 @@ aic.w(aic.vals)
 ## Discrete trait evolution
 #read discrete character traits
 X<-read.csv("elopomorph.csv",row.names=1)
-feed.mode<-setNames(as.factor(X$feed_mode),rownames(X))
+feed.mode<-setNames(X$feed_mode,rownames(X))
 #read eel tree
 eel.tree<-read.tree("elopomorph.tre")
 eel.tree
 
 chk<-name.check(eel.tree,feed.mode)
 chk
+
+feed.mode<-as.factor(feed.mode)
 
 #plot eel tree
 #plot tree file
