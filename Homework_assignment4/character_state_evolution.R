@@ -1,7 +1,17 @@
+## Homework 4 November 16 2021
+
+## Character state reconstuction in R
+
+#Load packages
+library(phytools)
+library(geiger)
+library(diversitree)
+library(stats)
+
 #set working directory
 setwd("Dropbox/My Mac (Michael’s MacBook Pro)/Documents/GitHub/2019_fall_UH_Systematics_class/Homework_assignment4/")
 
-#function to reset graphical paramerters
+#function to reset graphical parameters
 resetPar <- function() {
     dev.new()
     op <- par(no.readonly = TRUE)
@@ -11,11 +21,6 @@ resetPar <- function() {
 
 par(resetPar())
 
-#Load packages
-library(phytools)
-library(geiger)
-library(diversitree)
-library(stats)
 
 ## Continuous Trait Evolution
 #read in tree file
