@@ -68,7 +68,7 @@ eel.tree
 #check if tips and traits are the same
 name.check(eel.tree,feed.mode)
 
-
+#change feed.mode data to factor
 feed.mode<-as.factor(feed.mode)
 
 #plot eel tree
