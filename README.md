@@ -31,7 +31,7 @@ Most basic text editors unfortunately change more than they let you know, such a
 ### Neighbor joining / maximum parsimony analyses
 - [Paup*](http://phylosolutions.com/paup-test/)
 
-## Software that we will use on the [Mana](https://datascience.hawaii.edu/hpc/) supercomputing cluster:
+## Software that we will use on the [KOA](https://datascience.hawaii.edu/hpc/) supercomputing cluster:
 
 - [Anaconda](https://anaconda.org/) environments
 - [IQ-tree](http://www.iqtree.org/) maximum likelihood

@@ -1,14 +1,14 @@
 # Cluster Onboarding
 
-## MANA cluster information https://datascience.hawaii.edu/hpc/
+## KOA and MANA cluster information https://datascience.hawaii.edu/hpc/
 
 ## Latest HPC-101 (Onboarding) slides: http://go.hawaii.edu/wL
 
-There are two ways to access the MANA cluster
+There are two ways to access the KOA cluster
 
 Commandline (terminal [MAC] or putty [PC])
 
-Web Browser https://uhhpc.its.hawaii.edu/pun/sys/dashboard
+Web Browser https://koa.its.hawaii.edu/pun/sys/dashboard/
 
 
 ## Command line interface (CLI) vs Graphical User Interface (GUI)
