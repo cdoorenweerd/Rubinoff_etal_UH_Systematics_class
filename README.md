@@ -20,7 +20,10 @@ To ensure you know what file type you have and to prevent issues with matching t
 Most basic text editors unfortunately change more than they let you know, such as the way line breaks managed or the encoding of the document, which can cause errors when moving between operating systems (e.g., Windows to Linux). They also lack critical tools for troubleshooting error messages from phylogenetic software, such as line numbers. Therefore, use a better text editor. We recommend  [BBEdit](https://www.barebones.com/products/bbedit/) (Mac),  [Notepad++](https://notepad-plus-plus.org) (PC) or [Visual Studio Code](https://code.visualstudio.com). BBEdit and Notepad++ are lightweight text editors, Visual Studio Code is a larger program that includes a terminal interface to directly run and debug scripts (like e.g. in RStudio).
 
 ### Sequence alignment / editing
-[Aliview](http://www.ormbunkar.se/aliview/downloads/) or, if your lab has a license, [Geneious](https://www.geneious.com/)
+[Aliview](http://www.ormbunkar.se/aliview/downloads/) 
+To open from mac you need to disable the Gatekeeper in OSX (https://www.alphr.com/gatekeeper-macos-sierra/)
+
+or, if your lab has a license, [Geneious](https://www.geneious.com/)
 
 ### Processing results files
 - [Tracer](https://beast.community/tracer) for visualizing Bayesian convergence statistics
