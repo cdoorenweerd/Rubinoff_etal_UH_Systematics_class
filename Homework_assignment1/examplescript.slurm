@@ -28,4 +28,3 @@ mafft infile.fasta > outfile.fasta
 
 
 AMAS.py concat -i Hypo_* -f fasta -d dna
-
