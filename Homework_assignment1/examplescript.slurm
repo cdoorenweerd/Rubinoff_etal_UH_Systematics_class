@@ -26,3 +26,6 @@ muscle -align input.fa -output aln.afa
 
 mafft infile.fasta > outfile.fasta
 
+
+AMAS.py concat -i Hypo_* -f fasta -d dna
+
