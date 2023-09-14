@@ -77,7 +77,7 @@ _______________________________________  _____________  _____  ___________  ____
 ### 2. Next, start an interactive session on the ```sandbox``` partition
 
 ```console
-srun -I30 -p sandbox -N 1 -c 1 --mem=6G -t 0-04:00:00 --pty /bin/bashh
+srun -I30 -p sandbox -N 1 -c 1 --mem=6G -t 0-04:00:00 --pty /bin/bash
 ```
 
 
@@ -138,15 +138,105 @@ we will install t-coffee muscle and mafft.
 
 This will install the software one at a time.
 ```console
-conda install -c bioconda t-coffee
 conda install -c bioconda muscle
 conda install -c bioconda mafft
 ```
 
 Or we can install them all at once
 ```console
-conda install -c bioconda t-coffee muscle mafft
+conda install -c bioconda muscle mafft
 ```
 
+We will also want to install AMAS which allows easy file conversions as well as concatenation and summary statistics for sequence datasets
+
+To install this software you would use this command
+```console
+conda install -c bioconda amas
+```
+
+to test if the installation went well
+
+call the help flag for all software
+
+```console
+muscle -h
+mafft -h 
+AMAS.py -h 
+```
+
+To align a sequence file with muscle in command line
+
+```
+muscle -align input.fa -output aln.afa
+```
+Where you use the -align flag to give muscle your unalign file and you tell it to output your aligned data as aln.afa with the -output flag
+
+to align a sequence file with mafft in command line
+
+```
+mafft infile.fasta > outfile.fasta
+```
+
+The syntax is diffent with mafft. After you type in the mafft command you give it your input file and tell it to output and aligned outputfile with the greater than (>) sign.
+
+
+Once each gene has been aligned we can concatenated it togeather into a single file and a partition file. 
+
+The partition file tells the analysis software where each gene is in the large alignment.
+
+to do this we use AMAS.py 
+
+AMAS.py can do a number of things
+
+The AMAS commands are:
+  concat      Concatenate input alignments
+  convert     Convert to other file format
+  replicate   Create replicate data sets for phylogenetic jackknife
+  split       Split alignment according to a partitions file
+  summary     Write alignment summary
+  remove      Remove taxa from alignment
+  translate   Translate DNA alignment into protein alignment
+  trim        Remove columns from alignment
+  
+  
+But we will mainly use it to create concatenated files today 
+
+
+```console
+AMAS.py concat -h
+
+Concatenate input alignments
+options:
+  -h, --help            show this help message and exit
+  -p CONCAT_PART, --concat-part CONCAT_PART
+                        File name for the concatenated alignment partitions. Default: 'partitions.txt'
+  -t CONCAT_OUT, --concat-out CONCAT_OUT
+                        File name for the concatenated alignment. Default: 'concatenated.out'
+  -u {fasta,phylip,nexus,phylip-int,nexus-int}, --out-format {fasta,phylip,nexus,phylip-int,nexus-int}
+                        File format for the output alignment. Default: fasta
+  -y {nexus,raxml,unspecified}, --part-format {nexus,raxml,unspecified}
+                        Format of the partitions file. Default: 'unspecified'
+  -e, --check-align     Check if input sequences are aligned. Default: no check
+  -c CORES, --cores CORES
+                        Number of cores used. Default: 1
+required arguments:
+  -i IN_FILES [IN_FILES ...], --in-files IN_FILES [IN_FILES ...]
+                        Alignment files to be taken as input. You can specify multiple files using wildcards (e.g. --in-files *fasta)
+  -f {fasta,phylip,nexus,phylip-int,nexus-int}, --in-format {fasta,phylip,nexus,phylip-int,nexus-int}
+                        The format of input alignment
+  -d {aa,dna}, --data-type {aa,dna}
+                        Type of data
+``` 
+
+
+to do this we will use this command
+
+```console
+AMAS.py concat -i Hypo_* -f fasta -d dna
+```
+
+This will output a concatenated.out file which will be all your genes put togeather and a partition.txt file which is the partiton file. 
+
+With this we can start making trees!
 
 All set! Exit the interactive srun with ```exit```
