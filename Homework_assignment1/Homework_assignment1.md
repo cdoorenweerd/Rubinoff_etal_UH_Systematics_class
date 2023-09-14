@@ -15,6 +15,6 @@ Before starting the homework assignment, check that you have installed the softw
 - A slurm script used to align the Hawaiian Hyles dataset and concatenated in nexus format with a partition file.
 - A slurm script used to align the Syndemis dataset and concatenated in fasta format with a partition file.
 
-Deadline to turn in is indicated in the syllabus.
+Deadline to turn in is indicated in the syllabus. October 3 
 
 
