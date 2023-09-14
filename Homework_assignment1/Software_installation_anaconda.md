@@ -109,7 +109,7 @@ See which environments are already installed:
 conda env list
 ```
 
-Should be just the base. Now create a new environment [with IQ-tree](https://anaconda.org/bioconda/iqtree)
+Should be just the base. Now create a new environment. 
 
 ```console
 conda create --name sequence_alignment 
@@ -134,7 +134,7 @@ source activate sequence_alignment
 ```
 search google for commands to install software you need.
 
-we will install t-coffee muscle and mafft.
+we will install muscle and mafft.
 
 This will install the software one at a time.
 ```console
