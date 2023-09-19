@@ -245,7 +245,7 @@ All set! Exit the interactive srun with ```exit```
 
 ## ADVANCED BASH SCRIPTING
 
-### 3. How to deal with multiple files (for loops). 
+### 5. How to deal with multiple files (for loops). 
 
 This is not needed in the class but could be useful for you down the line.
 
