@@ -53,7 +53,7 @@ view them in a text editor
 
 ## to run programs live on the cluster
 ```
-srun -I30 -p sandbox -N 1 -c 1 --mem=6G -t 0-04:00:00 --pty /bin/bash
+srun -I30 -p sandbox -N 1 -c 1 --mem=1G -t 0-04:00:00 --pty /bin/bash
 
 ```
 
