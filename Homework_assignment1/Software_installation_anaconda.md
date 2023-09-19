@@ -237,6 +237,108 @@ AMAS.py concat -i Hypo_* -f fasta -d dna
 
 This will output a concatenated.out file which will be all your genes put togeather and a partition.txt file which is the partiton file. 
 
+After which you can change the name to whatever you want.
+
 With this we can start making trees!
 
 All set! Exit the interactive srun with ```exit```
+
+## ADVANCED BASH SCRIPTING
+
+### 3. How to deal with multiple files (for loops). 
+
+This is not needed in the class but could be useful for you down the line.
+
+A bash for loop is a bash programming language statement which allows code to be repeatedly executed. A for loop is classified as an iteration statement i.e. it is the repetition of a process within a bash script. For example, you can run UNIX command or task 5 times or read and process list of files using a for loop. A for loop can be used at a shell prompt or within a shell script itself.
+
+
+Detailed description of for loops
+https://www.cyberciti.biz/faq/bash-for-loop/
+
+To align multiple files say from phylogeneomic data you must repeat the same process over all your genes. 
+
+You can do this multiple ways but first you must get a list of all the files you want aligned. 
+
+If all the files are fasta files in a folder.
+
+```
+ls *.fasta > gene_list.txt
+```
+
+This will create a text file containing a list of all the fasta files in the folder.
+
+Then you will want to align each alignment separately.
+```  
+for f in `cat gene_list.txt`;
+do muscle -align $f -output "$f"_aligned.fasta;
+done;
+```
+
+This command will sequencially aligned all the files in the gene list with muscle and outputt them with the suffix _alinged.fasta
+
+While this is good since you would not have to manually aligned all the files it will still run each analysis one at a time.
+
+To leverage the cluster more efficiently you can use for loops and slurm to run each MSA all at the same time in different nodes.
+
+
+To do this we need to make a slurm script with specific variables that can be assigned 
+
+EXAMPLE slurm script
+```
+#!/bin/bash
+#SBATCH --job-name=Alignment
+#SBATCH --partition=shared
+## 3 day max run time for public partitions, except 4 hour max runtime for the sandbox partition
+#SBATCH --time=1-00:00:0 ## time format is DD-HH:MM:SS
+## task-per-node x cpus-per-task should not typically exceed core count on an individual node
+#SBATCH --nodes=1
+#SBATCH --tasks-per-node=1
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=6 ## max amount of memory per node you require
+##SBATCH --core-spec=0 ## Uncomment to allow jobs to request all cores on a node
+#SBATCH --error=err-%A.err ## %A - filled with jobid
+#SBATCH --output=out-%A.out ## %A - filled with jobid
+## Useful for remote notification
+#SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,TIME_LIMIT_80
+#SBATCH --mail-user=youremail@hawaii.edu
+## All options and environment variables found on schedMD site: http://slurm.schedmd.com/sbatch.html
+source ~/.bash_profile
+
+module load lang/Anaconda3/2023.03-1
+
+source activate sequence_alignment
+
+alignment=$1
+
+muscle -align $alignment -output "$alignment"_aligned.fasta
+```
+
+
+This slurm script will take any variable you place after you submit a job and place it in the actual script. 
+
+So if you run this script like this
+
+```
+sbatch example.slurm COI.fasta
+```
+
+The slurm script will replace the $alignment with COI.fasta in the script. 
+
+
+This is useful so you can run different analyses in different jobs and run everything all at once 
+
+To make this even better you can make a for loop to submit many jobs all at once. 
+
+So we still have the gene_list.txt with all the files we want aligned. 
+
+we can use a for loop to submit jobs to align all the files in the folder.
+
+```
+for f in cat `gene_list.txt`;
+do sbatch example.slurm $f
+done 
+```
+
+This will submit multiple jobs to align all the files in the gene_list.txt 
+
+
