@@ -294,7 +294,7 @@ EXAMPLE slurm script
 #SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
 #SBATCH --cpus-per-task=2
-#SBATCH --mem=6 ## max amount of memory per node you require
+#SBATCH --mem=6G ## max amount of memory per node you require
 ##SBATCH --core-spec=0 ## Uncomment to allow jobs to request all cores on a node
 #SBATCH --error=err-%A.err ## %A - filled with jobid
 #SBATCH --output=out-%A.out ## %A - filled with jobid
