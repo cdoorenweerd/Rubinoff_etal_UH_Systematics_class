@@ -35,11 +35,12 @@ iqtree -s Syndemis_all.phy -runs 10 -B 10000 -nt AUTO -m MFP
 
 What does each flag mean
 
+```
 -s = aligned dataset used for analysis 
 -runs = number of ML runs for this analysis (more runs maybe better)
 -nt = number of computer cores used in the analysis (AUTO lets computer decided)
 -m = which model used in the anlayses (MPF = model finder)
-
+```
 
 slurm script to run non-partitioned analysis using the command ```sbatch```
 
@@ -77,7 +78,10 @@ Partitioned analysis
 iqtree -s Syndemis_all.phy -p Syndemis_all_part.txt -runs 10 -B 10000 -nt AUTO -m MFP
 ```
 
+```
 -p = partitioned file used in the analyses
+```
+
 
 slurm script to run partitioned analysis using the command ```sbatch```
 
