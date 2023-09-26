@@ -116,9 +116,3 @@ iqtree -s Syndemis_all.phy -p Syndemis_all_part.txt -runs 10 -B 10000 -nt AUTO -
 
 2. After this tree inference analysis finishes, transfer the resulting files back to your local computer. Include relevant details from the log file (e.g., the selected substitution model) to your report.
 
-## 2. Create two trees for each dataset
-
-Open the ```.contree``` file with FigTree and root the tree that IQ-Tree generated Save this tree in newick file format using the option 'File > Export Trees...' and tick the box with 'Save as currently displayed'. To create the second tree, select only the ingroup, copy (ctrl+c), open a new FigTree instance (ctrl+n) and paste (ctrl+v) - you will now have a tree of just the ingroup. Save this tree as a separate newick tree file with a sensible name.
-
-
-Transfer the folder with these input files to the Mana cluster and add your run to the queue. After it finished, transfer the files back to your local computer and use FigTree to make a tree figure with confidence interval node bars, node ages (text) and a labeled x-axis that reflects time.
