@@ -25,7 +25,7 @@ Syndemis_all.phy
 Syndemis_all_part.txt 
 ```
 
-Prepare a folder with a slurm script (modify from Homework1) that will instruct IQ-Tree to infer a maximum likelihood tree. Your IQ-Tree command can look like:
+Prepare a folder with a slurm script that will instruct IQ-Tree to infer a maximum likelihood tree. Your IQ-Tree command can look like:
 
 Non-partitioned analysis
 
@@ -37,7 +37,7 @@ What does each flag mean
 
 ```
 -s = aligned dataset used for analysis 
--runs = number of ML runs for this analysis (more runs maybe better)
+--runs = number of ML runs for this analysis (more runs maybe better)
 -nt = number of computer cores used in the analysis (AUTO lets computer decided)
 -m = which model used in the anlayses (MPF = model finder)
 ```
