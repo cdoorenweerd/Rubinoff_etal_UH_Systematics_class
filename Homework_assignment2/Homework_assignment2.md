@@ -30,7 +30,7 @@ Prepare a folder with a slurm script (modify from Homework1) that will instruct 
 Non-partitioned analysis
 
 ```
-iqtree -s Syndemis_all.phy -runs 10 -B 10000 -nt AUTO -m MFP
+iqtree -s Syndemis_all.phy --runs 10 -B 10000 -nt AUTO -m MFP
 ```
 
 What does each flag mean
@@ -68,14 +68,14 @@ module load lang/Anaconda3/2023.03-1
 
 source activate iqtree
 
-iqtree -s Syndemis_all.phy -runs 10 -B 10000 -nt AUTO -m MFP
+iqtree -s Syndemis_all.phy --runs 10 -B 10000 -nt AUTO -m MFP
 ```
 
 
 
 Partitioned analysis
 ```
-iqtree -s Syndemis_all.phy -p Syndemis_all_part.txt -runs 10 -B 10000 -nt AUTO -m MFP
+iqtree -s Syndemis_all.phy -p Syndemis_all_part.txt --runs 10 -B 10000 -nt AUTO -m MFP
 ```
 
 ```
@@ -109,7 +109,7 @@ module load lang/Anaconda3/2023.03-1
 
 source activate iqtree
 
-iqtree -s Syndemis_all.phy -p Syndemis_all_part.txt -runs 10 -B 10000 -nt AUTO -m MFP
+iqtree -s Syndemis_all.phy -p Syndemis_all_part.txt --runs 10 -B 10000 -nt AUTO -m MFP
 ```
 
 
