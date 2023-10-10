@@ -55,8 +55,8 @@ slurm script to run non-partitioned analysis using the command ```sbatch```
 ## task-per-node x cpus-per-task should not typically exceed core count on an individual node
 #SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
-#SBATCH --cpus-per-task=2
-#SBATCH --mem=6G ## max amount of memory per node you require
+#SBATCH --cpus-per-task=19
+#SBATCH --mem=120G ## max amount of memory per node you require
 ##SBATCH --core-spec=0 ## Uncomment to allow jobs to request all cores on a node
 #SBATCH --error=err-%A.err ## %A - filled with jobid
 #SBATCH --output=out-%A.out ## %A - filled with jobid
@@ -70,7 +70,7 @@ module load lang/Anaconda3/2023.03-1
 
 source activate iqtree
 
-iqtree -s Syndemis_all.phy --runs 10 -B 10000 -nt AUTO -m MFP
+iqtree -s Syndemis_all.fasta --runs 10 -B 10000 -nt AUTO -m MFP
 ```
 
 
@@ -96,8 +96,8 @@ slurm script to run partitioned analysis using the command ```sbatch```
 ## task-per-node x cpus-per-task should not typically exceed core count on an individual node
 #SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
-#SBATCH --cpus-per-task=2
-#SBATCH --mem=6G ## max amount of memory per node you require
+#SBATCH --cpus-per-task=19
+#SBATCH --mem=120G ## max amount of memory per node you require
 ##SBATCH --core-spec=0 ## Uncomment to allow jobs to request all cores on a node
 #SBATCH --error=err-%A.err ## %A - filled with jobid
 #SBATCH --output=out-%A.out ## %A - filled with jobid
@@ -111,7 +111,7 @@ module load lang/Anaconda3/2023.03-1
 
 source activate iqtree
 
-iqtree -s Syndemis_all.phy -p Syndemis_all_part.txt --runs 10 -B 10000 -nt AUTO -m MFP
+iqtree -s Syndemis_all.fasta -p Syndemis_all_part.txt --runs 10 -B 10000 -nt AUTO -m MFP
 ```
 
 
