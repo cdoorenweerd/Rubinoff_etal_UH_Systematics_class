@@ -14,7 +14,7 @@ The report must not exceed two (2) pages with 11pt font or larger, EXCLUDING fig
 - An introduction section explaining the overlap and/or differences between the two maximum likelihood approaches (partitioned vs. non-partitioned analyses)
 - A methods section explaining the analyses parameters you used for both analyses and why they are appropriate. Use the format of: "I ran analysis X to Y", e.g., "I ran a bootstrap analysis for 20,000 generations to calculate branch support". Mention the versions of the software you used (hint: look for these in the log files).
 - A results and discussion section. Present the different trees that resulted from the analyses as human-readable figures. Are the trees different (are the same groups supported as monophyletic?) between your IQ-Tree results. What could cause those differences? (Hint: look at the alignment; what type of gene was used).
-- Numbered figures of the resulting trees from your analyses, referenced in the text, and a screenshot of your calibrations.txt file
+- Numbered figures of the resulting trees from your analyses, referenced in the text.
 
 
 
