@@ -20,6 +20,8 @@ The report must not exceed two (2) pages with 11pt font or larger, EXCLUDING fig
 
 ## 1. Infer a ML tree with IQ-Tree
 
+Make sure to copy the files from the Homework2 folder in the peps662_class folder to a new folder in the koa_scratch. If you try to run these analyses form the peps662_class folder it wont work. 
+
 1. Infer a ML tree with IQ-Tree. The input alignment files are available in the Homework2 folder on the Koa cluster, called 
 
 ```
