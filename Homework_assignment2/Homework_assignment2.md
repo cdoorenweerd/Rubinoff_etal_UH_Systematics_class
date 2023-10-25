@@ -120,9 +120,12 @@ iqtree -s Syndemis_all.fasta -p Syndemis_all_part.txt --runs 10 -B 10000 -nt AUT
 
 2. After this tree inference analysis finishes, transfer the resulting files back to your local computer. Include relevant details from the log file (e.g., the selected substitution model) to your report.
 
-Visualize the tree file using Figtree or any other tree visualization program (Geneious, Dendroscope, Icytree)
-For the Syndemis dataset, the outgroup should be jd4556_Dichelia_historionana, 
-For the Hyles dataset, the outgroups should be HD23265_Deilephila_porcellus and HD23279_Deilephila_elpenor_elpenor.
+Visualize the tree file (.treefile) using Figtree or any other tree visualization program (Geneious, Dendroscope, Icytree)
 
-Compare partitioned and non-partition datasets Topology may be very similar between the two types of analyes but bootstrap support may be different. 
+For the Syndemis dataset, the outgroup should be jd4556_Dichelia_historionana
+
+For the Hyles dataset, the outgroups should be HD23265_Deilephila_porcellus and HD23279_Deilephila_elpenor_elpenor
+
+
+Compare partitioned and non-partition datasets Topology may be very similar between the two types of analyses but bootstrap support may be different. 
 
