@@ -269,7 +269,7 @@ run this slurm script using sbatch
 ```sbatch Hyles_revbayes.slurm```
 
 
-Once done transfer the resulting files in the output folder back to your local computer and use tracer (https://github.com/beast-dev/tracer/releases/tag/v1.7.2) read the log files and see how MCMC is running
+Once done transfer the resulting files in the output folder back to your local computer and use the program tracer (https://github.com/beast-dev/tracer/releases/tag/v1.7.2) read the log files and see how MCMC is running
 tracer tutorial (https://beast.community/analysing_beast_output)
 
 
