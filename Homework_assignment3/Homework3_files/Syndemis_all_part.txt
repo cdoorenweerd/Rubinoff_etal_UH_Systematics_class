@@ -1,0 +1,8 @@
+p1_Syndemis_all_aln_CAD-out = 1-779
+p2_Syndemis_all_aln_CO1-out = 780-2230
+p3_Syndemis_all_aln_CO2-out = 2231-2959
+p4_Syndemis_all_aln_CO3-out = 2960-3613
+p5_Syndemis_all_aln_EF1a-out = 3614-4358
+p6_Syndemis_all_aln_MDH-out = 4359-5020
+p7_Syndemis_all_aln_N1-out = 5021-5605
+p8_Syndemis_all_aln_Rps5-out = 5606-6233
