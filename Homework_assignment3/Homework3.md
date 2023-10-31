@@ -210,21 +210,23 @@ for (i in 1:n_data_subsets) {
 mymodel = model(psi)
 # add monitors
 
-#### changing these monitors will affect your MCMC (How long does it run before collecting a samples of the Posterior) if your MCMC runs poorly try modifing these values. 
-
+#### changing these monitors will affect your MCMC (How many generations between collection a sample) if your MCMC runs poorly try modifing these values may help. 
+#### 
 monitors.append( mnModel(filename="output/Hyles_bayes.log",printgen=100) )
 monitors.append( mnFile(psi, filename="output/Hyles_bayes.trees", printgen=100) )
 monitors.append( mnScreen(TL, printgen=500) )
 
 # run the analysis
+#### changing the MCMC parameters will affect also affect your MCMC (How many generations total it will run and how many runs total) if your MCMC runs poorly try modifing these values may help. 
+
+#### changing the runs parameter (nruns=2) tell revbayes how many chains to use in the MCMC
 mymcmc = mcmc(mymodel, moves, monitors, nruns=2, combine="mixed")
-### This analyses will run for 150000 generations we will collect 1500 total samples from each run (3000 total)
+### This analyses will run for 150000 generations we will collect 1500 total samples from each run (3000 total). adding more generations can help MCMC too
 mymcmc.run(150000,tuningInterval=200)
 
 
 #Quit
 q()
-
 
 ``` 
 
@@ -242,13 +244,14 @@ Hyles_revbayes.slurm
 #SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
 #SBATCH --cpus-per-task=19
-#SBATCH --mem=6G  ## max amount of memory per node you require
+#SBATCH --mem=120G  ## max amount of memory per node you require
 #SBATCH --core-spec=0 ## Uncomment to allow jobs to request all cores on a node
 #SBATCH --error=error/err-%A.err ## %A - filled with jobid
 #SBATCH --output=out/out-%A.out ## %A - filled with jobid
 ## Useful for remote notification
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,TIME_LIMIT_80
-#SBATCH --mail-user=mdsjose@hawaii.edu
+## make sure to change to your email adress
+#SBATCH --mail-user=youremail@hawaii.edu
 ## All options and environment variables found on schedMD site: http://slurm.schedmd.com/sbatch.html
 source ~/.bash_profile
 
