@@ -35,6 +35,7 @@ srun -I30 -p sandbox -N 1 -c 1 --mem=6G -t 0-04:00:00 --pty /bin/bash
 #load anaconda
 module load lang/Anaconda3/2023.03-1
 
+#create revbayes environment containg the programs revbayes and amas
 conda create -n revbayes -c bioconda revbayes amas 
 
 ```
