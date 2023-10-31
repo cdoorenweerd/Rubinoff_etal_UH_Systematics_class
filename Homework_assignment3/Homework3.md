@@ -232,7 +232,7 @@ q()
 
 ``` 
 
-Once modified we can write a slurm script to run the analyse on the cluster 
+Once modified we can write a slurm script to run the analysis on the cluster 
 
 
 Hyles_revbayes.slurm
