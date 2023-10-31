@@ -36,7 +36,7 @@ srun -I30 -p sandbox -N 1 -c 1 --mem=6G -t 0-04:00:00 --pty /bin/bash
 module load lang/Anaconda3/2023.03-1
 
 #create revbayes environment containg the programs revbayes and amas
-conda create -n revbayes -c bioconda revbayes amas 
+conda create -n revbayes -c conda-forge -c bioconda libgcc-ng revbayes amas 
 
 ```
 
@@ -64,13 +64,15 @@ Hyles_all_Mrbayes_Wingless.nex
 Hyles_all_Mrbayes_mtDNA.nex
 ```
 
-Make a new directory called ```data``` and move the nexus files to this directory
+From the revbayes folder your just made, make a new directory called ```data``` and move the nexus files to this directory
 
 ```
+mkdir data
+
 mv Hyles_all*.nex data/
 ```
 
-Next we will need to modify Hyles_revbayes_GTR.rev file from the tutorial for out dataset.
+Next we will need to modify Hyles_revbayes_GTR.rev file from the tutorial for the Syndemis dataset.
 Revbayes uses syntax similar to R and python so this may look familiar to some.
 
 Hyles_revbayes_GTR.rev
