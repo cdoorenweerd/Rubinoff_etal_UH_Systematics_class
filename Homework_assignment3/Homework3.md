@@ -272,6 +272,10 @@ run this slurm script using sbatch
 Once done transfer the resulting files in the output folder back to your local computer and use the program tracer (https://github.com/beast-dev/tracer/releases/tag/v1.7.2) read the log files and see how MCMC is running
 tracer tutorial (https://beast.community/analysing_beast_output)
 
+For the report include some tracer screenshots to show how the MCMC ran
+
+![](tracer_hyles.png)
+
 
 There is a bug in the revbayes code to work around it we must use some shell scripting to extract the trees from the output file 
 
