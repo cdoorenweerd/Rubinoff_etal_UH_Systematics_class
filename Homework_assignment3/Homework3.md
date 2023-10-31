@@ -19,7 +19,7 @@ The report must not exceed two (2) pages with 11pt font or larger, EXCLUDING fig
 
 
 #EXAMPLE WITH THE HYLES DATASET
-I will show you how to do thess analyses using the Hyles dataset but use the Syndemis dataset for the homework
+I will show you how to do these analyses using the Hyles dataset but use the Syndemis dataset for the homework
 
 
 ## 1. Infer a BI tree with Revbayes
