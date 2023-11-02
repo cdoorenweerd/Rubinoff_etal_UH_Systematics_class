@@ -1,6 +1,6 @@
 # Homework assignment 3: Bayesian inference phylogenetics
 
-DUE November 20
+DUE November 21
 
 For this homework assignment we will continue use the Syndemis dataset we aligned and analyzed in homework 1 and 2 to infer BI phylogenies.
 
@@ -37,6 +37,9 @@ module load lang/Anaconda3/2023.03-1
 
 #create revbayes environment containg the programs revbayes and amas
 conda create -n revbayes -c conda-forge -c bioconda libgcc-ng revbayes amas 
+
+to start environment
+source activate revbayes
 
 ```
 
