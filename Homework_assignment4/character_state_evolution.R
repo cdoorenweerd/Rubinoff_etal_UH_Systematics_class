@@ -1,11 +1,11 @@
-## Homework 4 November 16 2021
+## Homework 4 November 14 2023
 
 ## Character state reconstruction in R
 
 #Install packages if you have not done so previously
 install.packages('phytools')
 install.packages('geiger')
-
+install.packages('plotrix')
 #Load packages
 library(phytools)
 library(geiger)
@@ -40,6 +40,7 @@ obj
 #plot infered ancestral states along the tree 
 plot(obj,legend=0.7*max(nodeHeights(anole.tree)), sig=2,fsize=.5)
 
+
 #Fitting models of continuous character evolution
 #fit brownian motion model
 fitBM<-fitContinuous(anole.tree,svl,model="BM")
@@ -57,7 +58,7 @@ aic.vals
 #calculate weights for different models
 aic.w(aic.vals)
 
-## Discrete trait evolution
+## Discrete trait evolution (Feeding) in elopomorph fish
 #read discrete character traits
 X<-read.csv("elopomorph.csv",row.names=1)
 feed.mode<-setNames(X$feed_mode,rownames(X))
@@ -74,6 +75,9 @@ feed.mode<-as.factor(feed.mode)
 #plot eel tree
 plotTree(eel.tree,ftype="i",lwd=1,fsize=.5)
 
+#save as PDF
+pdf("IBD_all_log2_subdivided2.pdf",width = 8,height = 8, useDingbats=FALSE)
+dev.off
 #Fitting models of discrete character evolution
 #fit equal rates model
 fitER<-ace(feed.mode,eel.tree,model="ER",type="discrete")
