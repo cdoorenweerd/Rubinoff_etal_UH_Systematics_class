@@ -1,6 +1,6 @@
 # Homework assignment 2: Maximum Likelihood phylogenetics
 
-DUE OCTOBER 31 (Happy Halloween)
+DUE OCTOBER 28 2026 (Happy Halloween)
 
 For this homework assignment we will use some of the datasets we aligned in homework 1 to infer ML phylogenies.
 
