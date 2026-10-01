@@ -87,6 +87,30 @@ iqtree -s Syndemis_all.phy -p Syndemis_all_part.txt --runs 10 -B 10000 -nt AUTO 
 ```
 
 
+Iqtree takes different partition file formats 
+
+1) RAXML style
+```
+DNA, gene1 = 1-450
+DNA, gene2 = 451-920
+```
+2) nexus style
+```
+#nexus
+begin sets;
+  charset part1 = aln1.phy: 1-100 201-300;
+  charset part2 = aln1.phy: 101-200;
+  charset part3 = aln2.phy: *;
+  charpartition mine = HKY:part1, GTR+G:part2, WAG+I+G:part3;
+end;
+```
+
+AMAS partition file format is slightly different and you will need to convert to either RAXML or Nexus format for iqtree to run.
+```
+gene1 = 1-450
+gene2 = 451-920
+```
+
 slurm script to run partitioned analysis using the command ```sbatch```
 
 ```
