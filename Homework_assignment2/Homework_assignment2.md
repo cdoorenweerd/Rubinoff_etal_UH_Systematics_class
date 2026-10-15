@@ -146,6 +146,8 @@ iqtree -s Syndemis_all.fasta -p Syndemis_all_part.txt --runs 10 -B 10000 -nt AUT
 
 Visualize the tree file (.treefile) using Figtree or any other tree visualization program (Geneious, Dendroscope, Icytree)
 
+You can download figtree using this link https://github.com/rambaut/figtree/releases/tag/v1.4.4
+
 For the Syndemis dataset, the outgroup should be jd4556_Dichelia_historionana
 
 For the Hyles dataset, the outgroups should be HD23265_Deilephila_porcellus and HD23279_Deilephila_elpenor_elpenor
