@@ -1,6 +1,6 @@
 # Homework assignment 3: Bayesian inference phylogenetics
 
-DUE November 21
+DUE November 25
 
 For this homework assignment we will continue use the Syndemis dataset we aligned and analyzed in homework 1 and 2 to infer BI phylogenies.
 
