@@ -264,7 +264,7 @@ module load lang/Anaconda3/2023.03-1
 
 source activate revbayes
 
-rb -b Hyles_revbayes_GTR.rev
+rb Hyles_revbayes_GTR.rev
 ```
 
 run this slurm script using sbatch
