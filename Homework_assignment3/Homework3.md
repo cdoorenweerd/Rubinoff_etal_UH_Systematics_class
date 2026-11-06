@@ -23,17 +23,17 @@ I will show you how to do these analyses using the Hyles dataset but use the Syn
 
 
 ## 1. Infer a BI tree with Revbayes
-Revbayes website has really good tutorial for many of the analyses. We will conduct partition Bayesian analyses from the website (https://revbayes.github.io/tutorials/partition/)
+Revbayes website has really good tutorial for many different analyses. We will be conducting a partition Bayesian analysis from the website (https://revbayes.github.io/tutorials/partition/)
 
 First we need to make a new environment and install revbayes. We will also use AMAS for this homework so we can install that too
 
 from the command line use these commands
 ```
 #start an interactive session
-srun -I30 -p sandbox -N 1 -c 1 --mem=6G -t 0-04:00:00 --pty /bin/bash
+srun -p sandbox -N 1 -c 1 --mem=6G -t 0-04:00:00 --pty /bin/bash
 
 #load anaconda
-module load lang/Anaconda3/2023.03-1
+module load lang/Anaconda3
 
 #create revbayes environment containg the programs revbayes and amas
 conda create -n revbayes -c conda-forge -c bioconda libgcc-ng revbayes amas 
