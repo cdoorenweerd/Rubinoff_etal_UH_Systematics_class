@@ -281,16 +281,10 @@ For the report include some tracer screenshots to show how the MCMC ran
 ![](tracer_hyles.png)
 
 
-There is a bug in the revbayes code to work around it we must use some shell scripting to extract the trees from the output file 
-
 start an interactive session 
 
 ```
 srun -I30 -p sandbox -N 1 -c 1 --mem=6G -t 0-04:00:00 --pty /bin/bash
-
-#use awk to extract trees posterior trees from file and name the output Hyles_bayes_awk.trees
-#the output of revbayes has the posterior trees in the 6th column in a tab separated file. This command extracts the all the trees from the file.
-awk ‘{print $6}’ output/Hyles_bayes.trees > output/Hyles_bayes_awk.trees
 ```
 
 In the same interactive session, we can use revbayes again to summarize the tree file with the appropriate burn-in.
@@ -302,7 +296,7 @@ rb
 
 # within revbayes
 # summarize output interactive after looking at the trace 
-treetrace = readTreeTrace("output/Hyles_bayes_awk.trees", treetype="non-clock", burnin= 0.25)
+treetrace = readTreeTrace("output/Hyles_bayes.trees", treetype="non-clock", burnin= 0.25)
 treetrace.summarize()
 map_tree = mapTree(treetrace,"output/Hyles_revbayes_map_bi25.tre")
 
