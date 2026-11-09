@@ -61,10 +61,10 @@ AMAS.py split -f fasta -d dna -i Hyles_all_nc.fasta -l Hyles_all_part.txt -u nex
 
 After splitting the dataset we will have separate genes nexus files. 
 ```
-Hyles_all_Mrbayes_Cad.nex
-Hyles_all_Mrbayes_EF1a.nex
-Hyles_all_Mrbayes_Wingless.nex
-Hyles_all_Mrbayes_mtDNA.nex
+Hyles_all_p1_Hyles_all_Mrbayes_Cad-out.nex
+Hyles_all_p2_Hyles_all_Mrbayes_EF1a-out.nex
+Hyles_all_p3_Hyles_all_Mrbayes_Wingless-out.nex
+Hyles_all_p4_Hyles_all_Mrbayes_mtDNA-out.nex
 ```
 
 From the revbayes folder your just made, make a new directory called ```data``` and move the nexus files to this directory
@@ -97,7 +97,8 @@ Hyles_revbayes_GTR.rev
 
 # read in the character data 
 ### you will need to change this to match the data your dataset
-filenames <- v("data/Hyles_all_Mrbayes_Cad.nex", "data/Hyles_all_Mrbayes_EF1a.nex", "data/Hyles_all_Mrbayes_Wingless.nex", "data/Hyles_all_Mrbayes_mtDNA.nex")
+filenames <- v("data/Hyles_all_p1_Hyles_all_Mrbayes_Cad-out.nex", "Hyles_all_p2_Hyles_all_Mrbayes_EF1a-out.nex", "Hyles_all_p3_Hyles_all_Mrbayes_Wingless-out.nex", "Hyles_all_p4_Hyles_all_Mrbayes_mtDNA-out.nex")
+
 
 n_data_subsets <- filenames.size()
 for (i in 1:n_data_subsets) {
